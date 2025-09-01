@@ -13,7 +13,7 @@ function NavTop() {
           <div className="col-md-4 valign">
             <div className="social text-center full-width">
               <a href="#0">
-                <i className="fab fa-behance"></i>
+                <i className="fab fa-instagram"></i>
               </a>
               <a href="#0">
                 <i className="fab fa-github"></i>
@@ -30,7 +30,7 @@ function NavTop() {
             <div className="full-width info">
               <div className="d-flex justify-content-end">
                 <a href="mailto:abc@example.com">
-                  <span className="sub-title fz-12">Gavi@website.com</span>
+                  <span className="sub-title fz-12">mughira162@gmail.com</span>
                 </a>
               </div>
             </div>

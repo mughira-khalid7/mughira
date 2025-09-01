@@ -25,7 +25,7 @@ function Profile() {
               </div>
               <div className="social text-center mt-20">
                 <a href="#0">
-                  <i className="fab fa-behance"></i>
+                  <i className="fab fa-instagram"></i>
                 </a>
                 <a href="#0">
                   <i className="fab fa-github"></i>
