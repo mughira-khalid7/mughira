@@ -1,27 +1,27 @@
 [
   {
-    "photo": "/assets/imgs/resume/s1.png",
-    "title": "UI / UX Design",
-    "persent": "95%"
-  },
-  {
-    "photo": "/assets/imgs/resume/s2.png",
-    "title": "Development",
-    "persent": "90%"
-  },
-  {
-    "photo": "/assets/imgs/resume/s3.png",
-    "title": "Graphic Design",
+    "photo": "/assets/imgs/resume/s1.gif",
+    "title": "FRONTEND DEVELOPMENT",
     "persent": "85%"
   },
   {
-    "photo": "/assets/imgs/resume/s4.png",
-    "title": "WordPress",
+    "photo": "/assets/imgs/resume/s2.gif",
+    "title": "BACKEND DEVELOPMENT",
+    "persent": "90%"
+  },
+  {
+    "photo": "/assets/imgs/resume/s3.gif",
+    "title": "RESTFUL API'S",
+    "persent": "80%"
+  },
+  {
+    "photo": "/assets/imgs/resume/s4.gif",
+    "title": "My SQL",
     "persent": "78%"
   },
   {
-    "photo": "/assets/imgs/resume/s5.png",
-    "title": "sketch",
-    "persent": "80%"
+    "photo": "/assets/imgs/resume/s5.gif",
+    "title": "JAVASCRIPT",
+    "persent": "70%"
   }
 ]

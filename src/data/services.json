@@ -1,21 +1,21 @@
 [
   {
-    "icon": "/assets/imgs/serv-img/1.png",
+    "icon": "/assets/imgs/serv-img/1.gif",
     "title": "FRONTEND DEVELOPMENT",
     "description": "Designing clean, responsive, and interactive user interfaces with Blade, JavaScript, and AJAX for smooth, modern experiences."
   },
   {
-    "icon": "/assets/imgs/serv-img/2.png",
+    "icon": "/assets/imgs/serv-img/2.gif",
     "title": "BACKEND DEVELOPMENT",
     "description": "Creating secure, scalable, and optimized backend systems in Laravel with authentication, role management, and business logic."
   },
   {
-    "icon": "/assets/imgs/serv-img/3.png",
+    "icon": "/assets/imgs/serv-img/3.gif",
     "title": "API INTEGRATION",
     "description": "Developing RESTful APIs ensuring secure authentication, smooth data exchange, and seamless third-party integration."
   },
   {
-    "icon": "/assets/imgs/serv-img/4.png",
+    "icon": "/assets/imgs/serv-img/4.gif",
     "title": "TECHNOLOGY SOLUTIONS",
     "description": "There are many variations of passages of available but to the majority have suffered but the into majority.        "
   }

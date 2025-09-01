@@ -53,7 +53,7 @@ function Profile() {
             <div className="d-flex align-items-center">
               <div className="mr-40">
                 <div className="d-flex align-items-center">
-                  <h2>03</h2>
+                  <h2>2.5</h2>
                   <p>
                     Years <br /> of Experance
                   </p>
