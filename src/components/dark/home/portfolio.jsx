@@ -1,6 +1,6 @@
 import React from 'react';
 import data from '../../../data/works.json';
-
+import { Link } from 'react-router-dom';
 function Portfolio() {
   return (
     <div className="sec-box portfolio section-padding" id="portfolio">
@@ -9,13 +9,13 @@ function Portfolio() {
           <div className="col-lg-6">
             <h6 className="sub-title opacity-7 mb-15">Our Portfolio</h6>
             <h3>
-              Look at my work & <br /> give us{' '}
+              Look at my work experance & <br /> give us{' '}
               <span className="main-color">your feedback</span>
             </h3>
           </div>
           <div className="col-lg-6 valign">
             <div className="go-more full-width d-flex justify-content-end">
-              <a href="/works" className="d-flex">
+              <Link to="/works" className="d-flex">
                 <span>
                   View All Works{' '}
                   <svg
@@ -29,7 +29,7 @@ function Portfolio() {
                     style={{ strokeWidth: 2 }}
                   />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -40,20 +40,20 @@ function Portfolio() {
             <div key={index} className="col-lg-6 items">
               <div className="item mt-50 wow fadeInUp" data-wow-delay=".2s">
                 <div className="img">
-                  <a href={item.link}>
+                  <Link to={`/project/${item.slug}`}>
                     <img src={item.photo} alt="" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="cont mt-30 d-flex align-items-center">
                   <div>
                     <span className="tag">Branding</span>
                     <h6 className="line-height-1">
-                      <a href="single-project">{item.title}</a>
+                      <Link to={`/project/${item.slug}`}>{item.title}</Link>
                     </h6>
                   </div>
                   <div className="ml-auto">
                     <div className="arrow">
-                      <a href="single-project">
+                      <Link to={`/project/${item.slug}`}>
                         <svg
                           className="arrow-right"
                           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ function Portfolio() {
                           xmlSpace="preserve"
                           style={{ strokeWidth: 2 }}
                         />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

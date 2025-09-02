@@ -12,16 +12,16 @@ function NavTop() {
           </div>
           <div className="col-md-4 valign">
             <div className="social text-center full-width">
-              <a href="#0">
+              <a href="https://www.instagram.com/mughira_khalid/" target="_blank" rel="noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#0">
+              <a href="https://www.instagram.com/mughira_khalid/">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="#0">
+              <a href="https://www.instagram.com/mughira_khalid/">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="#0">
+              <a href="https://www.instagram.com/mughira_khalid/">
                 <i className="fab fa-dribbble"></i>
               </a>
             </div>

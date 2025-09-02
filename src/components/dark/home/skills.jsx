@@ -60,7 +60,7 @@ function Skills() {
                 <div className="img icon-img-100 mt-80 mb-30">
                   <img src={item.photo} alt="" />
                 </div>
-                <h6>02x Designer Award</h6>
+                <h6>The Ahmed Institute of Computer Skills</h6>
                 <span className="sub-title main-color mt-10">{item.title}</span>
               </div>
             </div>

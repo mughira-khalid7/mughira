@@ -1,32 +1,32 @@
 [
   {
-    "photo": "/assets/imgs/works/1.jpg",
-    "title": "GeekFolio Portfolio",
-    "link": "/single-project"
+    "photo": "/assets/imgs/works/1.png",
+    "title": "Dubai Fashion Week",
+    "slug": "dubai-fashion-week"
   },
   {
-    "photo": "/assets/imgs/works/2.jpg",
-    "title": "Luxury Modern Website",
-    "link": "/single-project"
+    "photo": "/assets/imgs/works/2.png",
+    "title": "eZe Logs",
+    "slug": "eze-logs"
+  },
+  {
+    "photo": "/assets/imgs/works/3.png",
+    "title": "SHL London",
+    "slug": "shl-london"
+  },
+  {
+    "photo": "/assets/imgs/works/4.png",
+    "title": "Bright Vision Health",
+    "slug": "bright-vision-health"
   },
   {
     "photo": "/assets/imgs/works/3.jpg",
     "title": "Partiner BPO",
-    "link": "/single-project"
-  },
-  {
-    "photo": "/assets/imgs/works/3.jpg",
-    "title": "Partiner BPO",
-    "link": "/single-project"
-  },
-  {
-    "photo": "/assets/imgs/works/3.jpg",
-    "title": "Partiner BPO",
-    "link": "/single-project"
+    "slug": "partiner-bpo"
   },
   {
     "photo": "/assets/imgs/works/4.jpg",
     "title": "From our gallery",
-    "link": "/single-project"
+    "slug": "from-our-gallery"
   }
 ]
