@@ -1,6 +1,13 @@
 import React from 'react';
+import { Link, useParams } from "react-router-dom";
+import projects from "../../../../data/projectsData";
 
 function ProjectEzeLogs() {
+  const { slug } = useParams();
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
+
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
   return (
     <section className="sec-box project section-padding radius-15">
       <div className="row justify-content-center">
@@ -179,18 +186,30 @@ function ProjectEzeLogs() {
           <div className="col-lg-11">
             <div className="d-flex align-items-center mt-80 pt-80 bord-thin-top">
               <div className="prev">
-                <h6 className="sub-title">
-                  <a href="#">
-                    <i className="fas fa-long-arrow-alt-left"></i> Prev Project
-                  </a>
-                </h6>
+                {prevProject ? (
+                  <h6 className="sub-title">
+                    <Link to={`/project/${prevProject.slug}`}>
+                      <i className="fas fa-long-arrow-alt-left"></i> Prev Project
+                    </Link>
+                  </h6>
+                ) : (
+                  <h6 className="sub-title text-muted">
+                    <i className="fas fa-ban"></i> No Previous
+                  </h6>
+                )}
               </div>
               <div className="next ml-auto">
-                <h6 className="sub-title">
-                  <a href="#">
-                    next Project <i className="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </h6>
+                {nextProject ? (
+                  <h6 className="sub-title">
+                    <Link to={`/project/${nextProject.slug}`}>
+                      Next Project <i className="fas fa-long-arrow-alt-right"></i>
+                    </Link>
+                  </h6>
+                ) : (
+                  <h6 className="sub-title text-muted">
+                    No Next <i className="fas fa-ban"></i>
+                  </h6>
+                )}
               </div>
             </div>
           </div>

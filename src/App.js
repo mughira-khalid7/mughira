@@ -28,6 +28,7 @@ function App() {
         <Route path="/l-single-project" element={<LightSingleProject />} />
         <Route path="/l-works" element={<LightWorks />} />
         <Route path="/project/:slug" element={<SingleProject />} />
+        <Route path="/project/:slug" element={<SingleProject />} />
       </Routes>
     </Router>
   );

@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Nav() {
   return (
@@ -6,9 +8,9 @@ function Nav() {
       <div className="container">
         <div className="row">
           <div className="col-md-4 valign">
-            <a href="/dark" className="logo icon-img-60">
-              <img src="/assets/imgs/logo-light.png" alt="" />
-            </a>
+            <Link to="/dark" className="logo icon-img-60">
+              <img src="/assets/imgs/logo-light.png" alt="Logo" />
+            </Link>
           </div>
           <div className="col-md-8">
             <div className="navbar">
@@ -16,39 +18,39 @@ function Nav() {
                 <div className="col-lg-8 rest">
                   <ul className="navbar-nav main-bg d-flex justify-content-end">
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark">
                         <span>Home</span>
-                      </a>
+                      </HashLink>
                     </li>
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark#services">
                         <span>Services</span>
-                      </a>
+                      </HashLink>
                     </li>
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark#home">
                         <span>About</span>
-                      </a>
+                      </HashLink>
                     </li>
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark#portfolio">
                         <span>Portfolio</span>
-                      </a>
+                      </HashLink>
                     </li>
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark#price">
                         <span>Price</span>
-                      </a>
+                      </HashLink>
                     </li>
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark#info">
                         <span>Contact</span>
-                      </a>
+                      </HashLink>
                     </li>
                     <li className="nav-item">
-                      <a href="/dark">
+                      <HashLink smooth to="/dark#blog">
                         <span>Blog</span>
-                      </a>
+                      </HashLink>
                     </li>
                   </ul>
                 </div>

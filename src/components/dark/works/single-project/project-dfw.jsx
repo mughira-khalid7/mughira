@@ -1,6 +1,12 @@
 import React from 'react';
-
+import { Link, useParams } from "react-router-dom";
+import projects from "../../../../data/projectsData";
 function ProjectDFW() {
+  const { slug } = useParams();
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
+
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
   return (
     <section className="sec-box project section-padding radius-15">
       <div className="row justify-content-center">
@@ -99,40 +105,52 @@ function ProjectDFW() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
-              <div className="info sub-bg" id="sticky_item">
-                <ul>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="far fa-calendar-alt mr-10"></i>Date :
-                    </span>
-                    <p>7, April 2025</p>
+            <div className="col-lg-4 col-md-12 col-sm-12">
+              <div className="info sub-bg p-4 rounded-3 shadow-sm" id="sticky_item">
+                <ul className="list-unstyled mb-0">
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="far fa-calendar-alt me-3 fs-5 text-primary"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Date</span>
+                      <p className="mb-0 text-muted">7, April 2025</p>
+                    </div>
                   </li>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="fas fa-lightbulb mr-10"></i>Tech Stack :
-                    </span>
-                    <p>Laravel, MySQL, RESTful APIs, JavaScript, AJAX, jQuery, Bootstrap</p>
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="fas fa-lightbulb me-3 fs-5 text-warning"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Tech Stack</span>
+                      <p className="mb-0 text-muted">
+                        Laravel, MySQL, RESTful APIs, JavaScript, AJAX, jQuery, Bootstrap
+                      </p>
+                    </div>
                   </li>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="far fa-user mr-10"></i>Client :
-                    </span>
-                    <p>Dubai Fashion Week (DFW)</p>
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="far fa-user me-3 fs-5 text-success"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Client</span>
+                      <p className="mb-0 text-muted">Dubai Fashion Week (DFW)</p>
+                    </div>
                   </li>
-                  <li>
-                    <span className="sub-title">
-                      <i className="fas fa-globe mr-10"></i>Website :
-                    </span>
-                    <p>
-                      <a href="https://dubaifashionweek.org/" target="_blank" rel="noreferrer">
-                        dubaifashionweek.org
-                      </a>
-                    </p>
+                  <li className="d-flex align-items-start">
+                    <i className="fas fa-globe me-3 fs-5 text-info"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Website</span>
+                      <p className="mb-0">
+                        <a
+                          href="https://dubaifashionweek.org/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-decoration-none fw-semibold text-primary"
+                        >
+                          dubaifashionweek.org
+                        </a>
+                      </p>
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -159,18 +177,30 @@ function ProjectDFW() {
           <div className="col-lg-11">
             <div className="d-flex align-items-center mt-80 pt-80 bord-thin-top">
               <div className="prev">
-                <h6 className="sub-title">
-                  <a href="#">
-                    <i className="fas fa-long-arrow-alt-left"></i> Prev Project
-                  </a>
-                </h6>
+                {prevProject ? (
+                  <h6 className="sub-title">
+                    <Link to={`/project/${prevProject.slug}`}>
+                      <i className="fas fa-long-arrow-alt-left"></i> Prev Project
+                    </Link>
+                  </h6>
+                ) : (
+                  <h6 className="sub-title text-muted">
+                    <i className="fas fa-ban"></i> No Previous
+                  </h6>
+                )}
               </div>
               <div className="next ml-auto">
-                <h6 className="sub-title">
-                  <a href="#">
-                    Next Project <i className="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </h6>
+                {nextProject ? (
+                  <h6 className="sub-title">
+                    <Link to={`/project/${nextProject.slug}`}>
+                      Next Project <i className="fas fa-long-arrow-alt-right"></i>
+                    </Link>
+                  </h6>
+                ) : (
+                  <h6 className="sub-title text-muted">
+                    No Next <i className="fas fa-ban"></i>
+                  </h6>
+                )}
               </div>
             </div>
           </div>

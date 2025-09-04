@@ -6,7 +6,7 @@ function NavTop() {
       <div className="container">
         <div className="row">
           <div className="col-md-4 valign">
-            <a href="#0" className="logo icon-img-60">
+            <a href="/" className="logo icon-img-60">
               <img src="/assets/imgs/logo-light.png" alt="" />
             </a>
           </div>
