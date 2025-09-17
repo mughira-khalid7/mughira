@@ -41,12 +41,6 @@ function ProjectEzeLogs() {
                     Here choose yourself like that, without any looking back, do
                     your personal, home, small fashion, and all will be well.
                   </h6>
-                  <p>
-                    We create everything digital, printable and analytical won’t
-                    seasons, appear days them stars replenish divided. All
-                    second forth. Him place was seas man and gathering creepeth
-                    called fly.
-                  </p>
                   <ul className="rest list-arrow mt-50">
                     <li>
                       <span className="icon">
@@ -130,32 +124,47 @@ function ProjectEzeLogs() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
-              <div className="info sub-bg" id="sticky_item">
-                <ul>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="far fa-calendar-alt mr-10"></i> Date :
-                    </span>
-                    <p>6, August 2022</p>
+            <div className="col-lg-4 col-md-12 col-sm-12">
+              <div className="info sub-bg p-4 rounded-3 shadow-sm" id="sticky_item">
+                <ul className="list-unstyled mb-0">
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="far fa-calendar-alt me-3 fs-5 text-primary"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Date</span>
+                      <p className="mb-0 text-muted">25, December 2023</p>
+                    </div>
                   </li>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="fas fa-list-ul mr-10"></i> Categories :
-                    </span>
-                    <p>Web Design</p>
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="fas fa-lightbulb me-3 fs-5 text-warning"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Tech Stack</span>
+                      <p className="mb-0 text-muted">
+                        Laravel, MySQL, JavaScript, AJAX, jQuery
+                      </p>
+                    </div>
                   </li>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="far fa-user mr-10"></i> Client :
-                    </span>
-                    <p>Themeforest</p>
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="far fa-user me-3 fs-5 text-success"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Client</span>
+                      <p className="mb-0 text-muted">Ram Rajan</p>
+                    </div>
                   </li>
-                  <li>
-                    <span className="sub-title">
-                      <i className="fas fa-globe mr-10"></i> Website :
-                    </span>
-                    <p>UI_ThemeZ.com</p>
+                  <li className="d-flex align-items-start">
+                    <i className="fas fa-globe me-3 fs-5 text-info"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Website</span>
+                      <p className="mb-0">
+                        <a
+                          href="https://ezelogs.com/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-decoration-none fw-semibold text-primary"
+                        >
+                          ezelogs.com
+                        </a>
+                      </p>
+                    </div>
                   </li>
                 </ul>
               </div>

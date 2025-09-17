@@ -1,6 +1,13 @@
 import React from 'react';
+import { Link, useParams } from "react-router-dom";
+import projects from "../../../../data/projectsData";
 
 function ProjectBrightVisionHealth() {
+  const { slug } = useParams();
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
+
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
   return (
     <section className="sec-box project section-padding radius-15">
       <div className="row justify-content-center">
@@ -17,29 +24,18 @@ function ProjectBrightVisionHealth() {
               <div className="cont md-mb50">
                 <h3 className="mb-15 fw-500">The First layer.</h3>
                 <p>
-                  We create everything digital, printable and analytical won’t
-                  seasons, appear days them stars replenish divided. All second
-                  forth. Him place was seas man and gathering creepeth called
-                  fly.
-                </p>
-                <p className="mt-15">
-                  Now there is more fashion. There is no so-called trends. Now
-                  chase after anything not necessary — nor for fashionable color
-                  nor the shape, nor for style. Think about the content that you
-                  want to invest in a created object, and only then will form.
-                  The thing is your spirit.
+                  Bright Vision is a leading e-commerce store specializing in health, wellness, and surgical care products in Pakistan.
+                  They offer authentic branded goods across OTC,
+                  personal care, nutritional supplements, and medical devices, with free delivery for prepaid orders.
                 </p>
                 <div className="mt-30">
-                  <h6 className="mb-15 line-height-28">
-                    Here choose yourself like that, without any looking back, do
-                    your personal, home, small fashion, and all will be well.
-                  </h6>
                   <p>
-                    We create everything digital, printable and analytical won’t
-                    seasons, appear days them stars replenish divided. All
-                    second forth. Him place was seas man and gathering creepeth
-                    called fly.
-                  </p>
+                    They sell various categories: surgical products, personal care, OTC (over-the-counter) products, nutritional supplements, patches, etc.
+                  </p><br />
+                  <h6 className="mb-15 line-height-28">
+                    Free returns within 7 days. Money-back guarantee. Genuine products.
+                    Excellent user experience in navigating categories like “surgical”, “patches”, “supplements”.
+                  </h6>
                   <ul className="rest list-arrow mt-50">
                     <li>
                       <span className="icon">
@@ -58,7 +54,7 @@ function ProjectBrightVisionHealth() {
                           ></path>
                         </svg>
                       </span>
-                      <h6 className="inline fz-18">Amazing communication.</h6>
+                      <h6 className="inline fz-18">Health & Wellness.</h6>
                     </li>
                     <li className="mt-20">
                       <span className="icon">
@@ -78,7 +74,7 @@ function ProjectBrightVisionHealth() {
                         </svg>
                       </span>
                       <h6 className="inline fz-18">
-                        Best trendinf designing experience.
+                        Surgical Products.
                       </h6>
                     </li>
                     <li className="mt-20">
@@ -98,7 +94,7 @@ function ProjectBrightVisionHealth() {
                           ></path>
                         </svg>
                       </span>
-                      <h6 className="inline fz-18">Email &amp; Live chat.</h6>
+                      <h6 className="inline fz-18">Personal Care.</h6>
                     </li>
                     <li className="mt-20">
                       <span className="icon">
@@ -117,38 +113,53 @@ function ProjectBrightVisionHealth() {
                           ></path>
                         </svg>
                       </span>
-                      <h6 className="inline fz-18">Amazing communication.</h6>
+                      <h6 className="inline fz-18">Nutritional Supplements.</h6>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
-              <div className="info sub-bg" id="sticky_item">
-                <ul>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="far fa-calendar-alt mr-10"></i> Date :
-                    </span>
-                    <p>6, August 2022</p>
+            <div className="col-lg-4 col-md-12 col-sm-12">
+              <div className="info sub-bg p-4 rounded-3 shadow-sm" id="sticky_item">
+                <ul className="list-unstyled mb-0">
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="far fa-calendar-alt me-3 fs-5 text-primary"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Date</span>
+                      <p className="mb-0 text-muted">16, August 2025</p>
+                    </div>
                   </li>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="fas fa-list-ul mr-10"></i> Categories :
-                    </span>
-                    <p>Web Design</p>
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="fas fa-lightbulb me-3 fs-5 text-warning"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Tech Stack</span>
+                      <p className="mb-0 text-muted">
+                        RESTful APIs, PHP, Laravel, MySQL, JavaScript
+                      </p>
+                    </div>
                   </li>
-                  <li className="mb-30">
-                    <span className="sub-title">
-                      <i className="far fa-user mr-10"></i> Client :
-                    </span>
-                    <p>Themeforest</p>
+                  <li className="mb-4 d-flex align-items-start">
+                    <i className="far fa-user me-3 fs-5 text-success"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Client</span>
+                      <p className="mb-0 text-muted">Rizwan Ali</p>
+                    </div>
                   </li>
-                  <li>
-                    <span className="sub-title">
-                      <i className="fas fa-globe mr-10"></i> Website :
-                    </span>
-                    <p>UI_ThemeZ.com</p>
+                  <li className="d-flex align-items-start">
+                    <i className="fas fa-globe me-3 fs-5 text-info"></i>
+                    <div>
+                      <span className="sub-title fw-bold d-block">Website</span>
+                      <p className="mb-0">
+                        <a
+                          href="https://brightvision.com.pk/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-decoration-none fw-semibold text-primary"
+                        >
+                          brightvision.com.pk
+                        </a>
+                      </p>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -179,18 +190,30 @@ function ProjectBrightVisionHealth() {
           <div className="col-lg-11">
             <div className="d-flex align-items-center mt-80 pt-80 bord-thin-top">
               <div className="prev">
-                <h6 className="sub-title">
-                  <a href="#">
-                    <i className="fas fa-long-arrow-alt-left"></i> Prev Project
-                  </a>
-                </h6>
+                {prevProject ? (
+                  <h6 className="sub-title">
+                    <Link to={`/project/${prevProject.slug}`}>
+                      <i className="fas fa-long-arrow-alt-left"></i> Prev Project
+                    </Link>
+                  </h6>
+                ) : (
+                  <h6 className="sub-title text-muted">
+                    <i className="fas fa-ban"></i> No Previous
+                  </h6>
+                )}
               </div>
               <div className="next ml-auto">
-                <h6 className="sub-title">
-                  <a href="#">
-                    next Project <i className="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </h6>
+                {nextProject ? (
+                  <h6 className="sub-title">
+                    <Link to={`/project/${nextProject.slug}`}>
+                      Next Project <i className="fas fa-long-arrow-alt-right"></i>
+                    </Link>
+                  </h6>
+                ) : (
+                  <h6 className="sub-title text-muted">
+                    No Next <i className="fas fa-ban"></i>
+                  </h6>
+                )}
               </div>
             </div>
           </div>

@@ -23,7 +23,7 @@ function Blog() {
                 </span>
                 <h4>
                   <a href="single-blog">
-                    12 unique examples of portfolio websites.
+                    5 Tips for Writing Clean Laravel Code.
                   </a>
                 </h4>
                 <div className="row justify-content-center mt-15">

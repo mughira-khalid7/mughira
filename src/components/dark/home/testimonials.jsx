@@ -23,7 +23,7 @@ function Testimonials() {
             <div className="col-lg-7">
               <h6 className="sub-title opacity-7 mb-15">Testimonials</h6>
               <h3>
-                Trusted by <span className="main-color">Hundered Clients</span>
+                Trusted by <span className="main-color">Many Clients</span>
               </h3>
             </div>
           </div>
@@ -37,54 +37,7 @@ function Testimonials() {
                 className="swiper-container"
                 {...swiperOptions}
               >
-                <SwiperSlide style={{ height: '400px' }}>
-                  <div className="item ">
-                    <div className="icon-img-60 mr-60">
-                      <img src="/assets/imgs/svg-assets/quote.png" alt="" />
-                    </div>
-
-                    <div>
-                      <div className="cont mb-30">
-                        <div className="d-flex align-items-center">
-                          <div className="rate-stars fz-12">
-                            <span className="rate main-color">
-                              <i className="fas fa-star"></i>
-                              <i className="fas fa-star"></i>
-                              <i className="fas fa-star"></i>
-                              <i className="fas fa-star"></i>
-                              <i className="fas fa-star"></i>
-                            </span>
-                            <span className="fz-12 opacity-7 ml-10">
-                              (71 Reviews)
-                            </span>
-                          </div>
-                        </div>
-                        <p className="fz-20 mt-15">
-                          We have purchased well into the thousands of items,
-                          but this is without doubt one of the best we’ve have
-                          been lucky enough to work on, the attention to detail
-                          apparent throughout, and the delivery is impressively
-                          intuitive.
-                        </p>
-                      </div>
-                      <div className="d-flex align-items-center">
-                        <div>
-                          <div className="img">
-                            <img src="/assets/imgs/testim/1.jpg" alt="" />
-                          </div>
-                        </div>
-                        <div className="ml-30">
-                          <div className="info">
-                            <h6 className="main-color">Leonard Heiser</h6>
-                            <span className="fz-13 mt-10 opacity-8">
-                              Envato customer
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                {/* Testimonial 1 */}
                 <SwiperSlide style={{ height: '400px' }}>
                   <div className="item d-flex">
                     <div>
@@ -94,7 +47,7 @@ function Testimonials() {
                     </div>
                     <div>
                       <div className="cont mb-30">
-                        <div className="d-flex align-items-center">
+                        {/* <div className="d-flex align-items-center">
                           <div className="rate-stars fz-12">
                             <span className="rate main-color">
                               <i className="fas fa-star"></i>
@@ -107,26 +60,221 @@ function Testimonials() {
                               (71 Reviews)
                             </span>
                           </div>
-                        </div>
-                        <p className="fz-20 mt-15">
-                          We have purchased well into the thousands of items,
-                          but this is without doubt one of the best we’ve have
-                          been lucky enough to work on, the attention to detail
-                          apparent throughout, and the delivery is impressively
-                          intuitive.
+                        </div> */}
+                        <p className="fz-20">
+                          His **Seating Plan System with Real-time AJAX filtering**
+                          is exactly what we needed for our events. <br /> Reliable,
+                          fast, and user-friendly. Highly recommended!
                         </p>
                       </div>
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/1.jpg" alt="" />
+                            <img src="/assets/imgs/testim/Testimonial1.webp" alt="" />
                           </div>
                         </div>
                         <div className="ml-30">
                           <div className="info">
-                            <h6 className="main-color">Leonard Heiser</h6>
+                            <h6 className="main-color">Jacob Abrian</h6>
                             <span className="fz-13 mt-10 opacity-8">
-                              Envato customer
+                              CEO of Arab Fashion Council (AFC)
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 2 */}
+                <SwiperSlide style={{ height: '400px' }}>
+                  <div className="item d-flex">
+                    <div>
+                      <div className="icon-img-60 mr-60">
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="cont mb-30">
+                        {/* <div className="d-flex align-items-center">
+                          <div className="rate-stars fz-12">
+                            <span className="rate main-color">
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                            </span>
+                            <span className="fz-12 opacity-7 ml-10">
+                              (71 Reviews)
+                            </span>
+                          </div>
+                        </div> */}
+                        <p className="fz-20">
+                          Great work experience with Mughira. His **RESTful APIs**
+                          are well-documented, secure, and scalable. Perfect for
+                          our mobile app backend.
+                        </p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="img">
+                            <img src="/assets/imgs/testim/Testimonial4.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div className="ml-30">
+                          <div className="info">
+                            <h6 className="main-color">Arslan Zafar</h6>
+                            <span className="fz-13 mt-10 opacity-8">
+                              Senior iOS DEVELOPER at AppWorks
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+
+                {/* Testimonial 3 */}
+                <SwiperSlide style={{ height: '400px' }}>
+                  <div className="item d-flex">
+                    <div>
+                      <div className="icon-img-60 mr-60">
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="cont mb-30">
+                        {/* <div className="d-flex align-items-center">
+                          <div className="rate-stars fz-12">
+                            <span className="rate main-color">
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                            </span>
+                            <span className="fz-12 opacity-7 ml-10">
+                              (71 Reviews)
+                            </span>
+                          </div>
+                        </div> */}
+                        <p className="fz-20">
+                          His **Multi-Tenant Laravel Setup** helped us separate
+                          databases per project. Migration & seeding run smoothly.
+                          Saved us weeks of dev time.
+                        </p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="img">
+                            <img src="/assets/imgs/testim/Testimonial3.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div className="ml-30">
+                          <div className="info">
+                            <h6 className="main-color">Emily Carter</h6>
+                            <span className="fz-13 mt-10 opacity-8">
+                              Professor of Princeton University
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 4 */}
+                <SwiperSlide style={{ height: '400px' }}>
+                  <div className="item d-flex">
+                    <div>
+                      <div className="icon-img-60 mr-60">
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="cont mb-30">
+                        {/* <div className="d-flex align-items-center">
+                          <div className="rate-stars fz-12">
+                            <span className="rate main-color">
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                            </span>
+                            <span className="fz-12 opacity-7 ml-10">
+                              (71 Reviews)
+                            </span>
+                          </div>
+                        </div> */}
+                        <p className="fz-20">
+                          We loved the **Custom Email Template Builder**
+                          Mughira coded for us. Drag & drop, placeholders, and
+                          dynamic ticket emails — all from scratch!
+                        </p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="img">
+                            <img src="/assets/imgs/testim/Testimonial2.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div className="ml-30">
+                          <div className="info">
+                            <h6 className="main-color">Daniel Brown</h6>
+                            <span className="fz-13 mt-10 opacity-8">
+                              Marketing Manager at Eventify
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 5 */}
+                <SwiperSlide style={{ height: '400px' }}>
+                  <div className="item d-flex">
+                    <div>
+                      <div className="icon-img-60 mr-60">
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="cont mb-30">
+                        {/* <div className="d-flex align-items-center">
+                          <div className="rate-stars fz-12">
+                            <span className="rate main-color">
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                              <i className="fas fa-star"></i>
+                            </span>
+                            <span className="fz-12 opacity-7 ml-10">
+                              (71 Reviews)
+                            </span>
+                          </div>
+                        </div> */}
+                        <p className="fz-20">
+                          Mughira built a **Custom Email Integration System**
+                          for us. The Google, Outlook, Yahoo, Aol & iCloud OAuth setup worked flawlessly.
+                          He handled IMAP issues like a pro. Smooth experience!
+                        </p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <div className="img">
+                            <img src="/assets/imgs/testim/Testimonial5.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div className="ml-30">
+                          <div className="info">
+                            <h6 className="main-color">Jesada Taveesupapong</h6>
+                            <span className="fz-13 mt-10 opacity-8">
+                              CEO of SSL Logistics Co., Ltd.
                             </span>
                           </div>
                         </div>

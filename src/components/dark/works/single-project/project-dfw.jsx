@@ -128,7 +128,7 @@ function ProjectDFW() {
                     <i className="far fa-user me-3 fs-5 text-success"></i>
                     <div>
                       <span className="sub-title fw-bold d-block">Client</span>
-                      <p className="mb-0 text-muted">Dubai Fashion Week (DFW)</p>
+                      <p className="mb-0 text-muted">Jacob Abrian</p>
                     </div>
                   </li>
                   <li className="d-flex align-items-start">

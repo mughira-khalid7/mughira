@@ -6,7 +6,7 @@ function Price() {
       <div className="sec-head mb-80 wow fadeInUp">
         <div className="row justify-content-center">
           <div className="col-lg-6 text-center">
-            <h6 className="sub-title opacity-7 mb-15">Best Pricing</h6>
+            <h6 className="sub-title opacity-7 mb-15">Best Pricing for Frelancing</h6>
             <h3>
               <span className="main-color">Flexible</span> Pricing Plan
             </h3>
