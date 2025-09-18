@@ -1,17 +1,23 @@
 [
   {
+    "section": "01",
+    "institute": "Rashid Minhas Group of Schools",
     "photo": "/light/assets/imgs/awards/1.png",
-    "title": "Nominee",
-    "year": "2019"
+    "title": "Metric Science",
+    "year": "2018-20"
   },
   {
+    "section": "02",
+    "institute": "Rashid Minhas Group of Schools",
     "photo": "/light/assets/imgs/awards/2.png",
-    "title": "Winner",
-    "year": "2020"
+    "title": "INtermediate-ICS",
+    "year": "2020-22"
   },
   {
+    "section": "03",
+    "institute": "Virtual University of Pakistan",
     "photo": "/light/assets/imgs/awards/2.png",
-    "title": "Ruuners Up",
-    "year": "2021"
+    "title": "BS(CS)",
+    "year": "2023-Presents"
   }
 ]

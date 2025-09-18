@@ -1,19 +1,59 @@
-import React from 'react';
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 function Info() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_4h17pcp", // EmailJS Service ID
+        "template_bwdowo4", // EmailJS Template ID
+        form.current,
+        "TLBiCxaT6AjA0Ni6J" // EmailJS Public Key
+      )
+      .then(
+        () => {
+          Swal.fire({
+            title: "Message Sent! ✔",
+            text: "Thank you for reaching out. I'll get back to you soon.",
+            icon: "success",
+            confirmButtonColor: "#242424",
+          });
+          form.current.reset();
+        },
+        () => {
+          Swal.fire({
+            title: "❌ Failed!",
+            text: "Something went wrong. Please try again later.",
+            icon: "error",
+            confirmButtonColor: "#d33",
+          });
+        }
+      );
+  };
+
   return (
     <div className="sec-box contact section-padding bord-thin-top" id="info">
       <div className="row">
         <div className="col-lg-5">
           <div className="sec-head md-mb80 wow fadeIn">
             <h6 className="sub-title mb-15 opacity-7">Get In Touch</h6>
-            <h2 className="fz-50">Let is make your brand brilliant!</h2>
+            <h2 className="fz-50">Let’s make your brand brilliant!</h2>
             <p className="fz-15 mt-10">
               If you would like to work with me or just want to get in touch,
               I’d love to hear from you!
             </p>
             <div className="phone fz-30 fw-600 mt-30 underline">
-              <a href="#0" className="main-color">
+              <a
+                href="https://wa.me/923269908774"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="main-color"
+              >
                 +92 326 990 877 4
               </a>
             </div>
@@ -41,9 +81,11 @@ function Info() {
             </ul>
           </div>
         </div>
+
         <div className="col-lg-7 valign">
           <div className="full-width wow fadeIn">
-            <form id="contact-form" method="post" action="contact.php">
+            {/* EmailJS form */}
+            <form ref={form} onSubmit={sendEmail}>
               <div className="messages"></div>
 
               <div className="controls row">
@@ -54,7 +96,7 @@ function Info() {
                       type="text"
                       name="name"
                       placeholder="Name"
-                      required="required"
+                      required
                     />
                   </div>
                 </div>
@@ -66,7 +108,7 @@ function Info() {
                       type="email"
                       name="email"
                       placeholder="Email"
-                      required="required"
+                      required
                     />
                   </div>
                 </div>
@@ -89,7 +131,7 @@ function Info() {
                       name="message"
                       placeholder="Message"
                       rows="4"
-                      required="required"
+                      required
                     ></textarea>
                   </div>
                   <div className="mt-30">
