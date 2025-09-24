@@ -126,7 +126,7 @@ function ProjectBrightVisionHealth() {
                     <i className="far fa-calendar-alt me-3 fs-5 text-primary"></i>
                     <div>
                       <span className="sub-title fw-bold d-block">Date</span>
-                      <p className="mb-0 text-muted">16, August 2025</p>
+                      <p className="mb-0 text-muted">16, August 2024</p>
                     </div>
                   </li>
                   <li className="mb-4 d-flex align-items-start">

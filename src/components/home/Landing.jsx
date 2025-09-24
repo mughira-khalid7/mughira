@@ -22,14 +22,14 @@ function Landing() {
             <div className="item mt-40">
               <div className="img">
                 <div className="screen">
-                  <a href="/dark" target="_blank">
+                  <a href="/preview" target="_blank">
                     <img src="demos/1.png" alt="" />
                   </a>
                 </div>
                 <div className="botm"></div>
               </div>
               <div className="text-center">
-                <h3>Home Dark</h3>
+                <h3>Theme Preview</h3>
               </div>
             </div>
           </div>
