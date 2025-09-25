@@ -154,11 +154,11 @@ function Price() {
       {/* CUSTOM PLAN */}
       <div className="row justify-content-center mt-80">
         <div className="col-lg-8 text-center">
-          <h5 className="mb-20">Need Something Different?</h5>
+          <h5 className="mb-20">Need Something <span className='main-color'>Different</span> ?</h5>
           <p className="mb-30">
             Have a unique idea or a long-term project? Let’s create a custom plan that perfectly fits your needs.
           </p>
-          <Link to="contact" spy={true} smooth={true} className="butn butn-md radius-5 text-u cursor-pointer">
+          <Link to="contact" spy={true} smooth={true} className="butn butn-md butn-bord radius-5 text-u cursor-pointer half-width">
             <span>Request Custom Plan</span>
           </Link>
         </div>

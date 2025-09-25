@@ -1,7 +1,30 @@
-import React from 'react';
-import data from '../../../../data/blogs.json';
-
+import React, { useEffect, useState } from "react";
+// import data from '../../../../data/blogs.json';
+import { Link } from "react-router-dom";
 function Blogs() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setBlogs(data);
+        } else if (data && Array.isArray(data.data)) {
+          setBlogs(data.data);
+        } else {
+          setBlogs([]);
+        }
+      })
+      .catch((err) => console.error("Error fetching blogs:", err));
+  }, []);
+
+  // Convert Google Drive link to direct image link
+  const getImageUrl = (url) => {
+    if (!url) return "";
+    const match = url.match(/\/d\/(.*?)\//);
+    return match ? `https://drive.google.com/uc?export=view&id=${match[1]}` : url;
+  };
   return (
     <section className="sec-box blog section-padding pt-0">
       <div className="row">
@@ -12,20 +35,20 @@ function Blogs() {
         </div>
       </div>
       <div className="row md-marg">
-        {data?.slice(0, 3).map((item, index) => (
+        {blogs.map((blog, index) => (
           <div key={index} className="col-lg-4">
             <div className="item md-mb30">
               <div className="img">
-                <img src={item.photo} alt="" />
+                <img src={getImageUrl(blog.Image)} alt={blog.Title} />
               </div>
               <div className="box">
                 <div className="cont">
                   <span className="date">
-                    <i className="fas fa-calendar-alt mr-10 main-color"></i> 6 ,
-                    Aug 2022
+                    <i className="fas fa-calendar-alt mr-10 main-color"></i>
+                    {blog.Date} 
                   </span>
                   <h5>
-                    <a href={item.link}>{item.title}</a>
+                    <Link to={`/blog-details/${index}`}>{blog.Title}</Link>
                   </h5>
                 </div>
                 <div className="info d-flex align-items-center">
@@ -35,7 +58,7 @@ function Blogs() {
                     </span>
                   </div>
                   <div className="ml-auto">
-                    <a href={item.link}>
+                    <Link to={`/blog-details/${index}`}>
                       Read More{' '}
                       <svg
                         className="ml-5"
@@ -50,7 +73,7 @@ function Blogs() {
                           fill="currentColor"
                         ></path>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -22,7 +22,7 @@ function App() {
         <Route path="/dark" element={<HomeDark />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/works" element={<Works />} />
-        <Route path="/single-blog" element={<SingleBlog />} />
+        <Route path="/blog-details/:id" element={<SingleBlog />} />
         <Route path="/light-m" element={<HomeLight />} />
         <Route path="/l-blogs" element={<LightBlogs />} />
         <Route path="/l-single-blog" element={<LightSingleBlog />} />

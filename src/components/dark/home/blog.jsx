@@ -1,6 +1,24 @@
-import React from 'react';
-import data from '../../../data/blogs.json';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+// import data from '../../../data/blogs.json';
 function Blog() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
+      .then((res) => res.json())
+      .then((data) => {
+        // agar array aaya to direct use karo
+        if (Array.isArray(data)) {
+          setBlogs(data);
+        } else if (data && Array.isArray(data.data)) {
+          setBlogs(data.data);
+        } else {
+          setBlogs([]);
+        }
+      })
+      .catch((err) => console.error("Error fetching blogs:", err));
+  }, []);
   return (
     <div className="sec-box blog section-padding bord-thin-top" id="blog">
       <div className="sec-head mb-80">
@@ -32,20 +50,25 @@ function Blog() {
         </div>
       </div>
       <div className="row">
-        {data?.slice(0, 3).map((item, index) => (
+        {blogs.map((blog, index) => (
           <div key={index} className="col-lg-4">
             <div className="item md-mb30 wow fadeIn" data-wow-delay=".2s">
               <div className="img">
-                <img src={item.photo} alt="" />
+                <img src={blog.Image} alt={blog.Title} style={{
+                  width: "100%",
+                  height: "220px",
+                  objectFit: "cover",
+                  borderRadius: "10px",
+                }} />
               </div>
               <div className="box">
                 <div className="cont">
                   <span className="date">
-                    <i className="fas fa-calendar-alt mr-10 main-color"></i> 6 ,
-                    Aug 2022
+                    <i className="fas fa-calendar-alt mr-10 main-color"></i>
+                    {blog.Date}
                   </span>
                   <h5>
-                    <a href={item.link}>{item.title}</a>
+                    <Link to={`/blog-details/${index}`}>{blog.Title}</Link>
                   </h5>
                 </div>
                 <div className="info d-flex align-items-center">
@@ -55,7 +78,7 @@ function Blog() {
                     </span>
                   </div>
                   <div className="ml-auto">
-                    <a href="single-blog">
+                    <Link to={`/blog-details/${index}`}>
                       Read More{' '}
                       <svg
                         className="ml-5"
@@ -70,7 +93,7 @@ function Blog() {
                           fill="currentColor"
                         ></path>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
