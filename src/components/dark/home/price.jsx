@@ -30,19 +30,19 @@ function Price() {
             <div className="content">
               <div className="amount d-flex align-items-end pb-50 mb-50 bord-thin-bottom">
                 <h2 className="main-color">$15</h2>
-                <p className="ml-20 fz-20 flex items-center space-x-2 whitespace-nowrap">
+                <p className="fz-20 flex items-center space-x-2 whitespace-nowrap">
                   <span>/ week</span>
                   <sub className="text-sm ml-1">2 hours daily</sub>
                 </p>
               </div>
               <div className="feat">
                 <ul className="rest">
-                  <li><i className="fas fa-check"></i> Fix small bugs & issues quickly</li>
-                  <li><i className="fas fa-check"></i> Improve performance of existing features</li>
-                  <li><i className="fas fa-check"></i> Database clean-up & speed improvements</li>
-                  <li><i className="fas fa-check"></i> Simple API connections</li>
+                  <li><i className="fas fa-check"></i> Fix small bugs & resolve issues quickly</li>
+                  <li><i className="fas fa-check"></i> Optimize performance of existing features</li>
+                  <li><i className="fas fa-check"></i> Database cleanup & speed improvements</li>
+                  <li><i className="fas fa-check"></i> Basic API connections (RESTful, simple integrations)</li>
                   <li><i className="fas fa-check"></i> Minor UI fixes (HTML, CSS, JS)</li>
-                  <li><i className="fas fa-check"></i> Email & chat support for 1 month</li>
+                  <li><i className="fas fa-check"></i> Email & chat support (1 month)</li>
                 </ul>
               </div>
               <div className="text-center mt-50">
@@ -72,7 +72,7 @@ function Price() {
             <div className="content">
               <div className="amount d-flex align-items-end pb-50 mb-50 bord-thin-bottom">
                 <h2 className="main-color">$30</h2>
-                <p className="ml-20 fz-20 flex items-center space-x-2 whitespace-nowrap">
+                <p className="fz-20 flex items-center space-x-2 whitespace-nowrap">
                   <span>/ week</span>
                   <sub className="text-sm ml-1">2 hours daily</sub>
                 </p>
@@ -116,7 +116,7 @@ function Price() {
             <div className="content">
               <div className="amount d-flex align-items-end pb-50 mb-50 bord-thin-bottom">
                 <h2 className="main-color">$50</h2>
-                <p className="ml-20 fz-20 flex items-center space-x-2 whitespace-nowrap">
+                <p className="fz-20 flex items-center space-x-2 whitespace-nowrap">
                   <span>/ week</span>
                   <sub className="text-sm ml-1">3 hours daily</sub>
                 </p>
