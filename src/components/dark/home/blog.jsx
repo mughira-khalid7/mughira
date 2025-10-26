@@ -31,7 +31,7 @@ function Blog() {
           </div>
           <div className="col-lg-6 valign">
             <div className="go-more full-width d-flex justify-content-end">
-              <a href="/blogs" className="d-flex">
+              <Link to="/blogs" className="d-flex">
                 <span>
                   View All Posts{' '}
                   <svg
@@ -44,13 +44,13 @@ function Blog() {
                     style={{ strokeWidth: 2 }}
                   />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="row">
-        {blogs.map((blog, index) => (
+        {blogs.slice(0, 3).map((blog, index) => (
           <div key={index} className="col-lg-4">
             <div className="item md-mb30 wow fadeIn" data-wow-delay=".2s">
               <div className="img">

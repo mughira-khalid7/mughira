@@ -1,58 +1,79 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 
 function Project() {
+  const { id } = useParams();
+  const [blog, setBlog] = useState(null);
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
+      .then((res) => res.json())
+      .then((data) => {
+        let blogData = [];
+        if (Array.isArray(data)) {
+          blogData = data;
+        } else if (data && Array.isArray(data.data)) {
+          blogData = data.data;
+        }
+        setBlogs(blogData);
+        if (blogData.length > 0 && id !== undefined) {
+          setBlog(blogData[parseInt(id)]);
+        }
+      })
+      .catch((err) => console.error("Error fetching blogs:", err));
+  }, [id]);
+
+  if (!blog) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <section class="sec-box main-post section-padding">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="caption text-center">
-            <div class="gat">
+    <section className="sec-box main-post section-padding">
+      <div className="row justify-content-center">
+        <div className="col-lg-10">
+          <div className="caption text-center">
+            <div className="gat">
               <a href="#0">
-                <span>Web Design</span>
+                <span>Blog Post</span>
               </a>
               <a href="#0">
-                <span>Envato</span>
+                <span>Latest</span>
               </a>
             </div>
-            <h1 class="fz-55 mt-30">
-              Network of wormholes colonies extraordinary claims require.
+            <h1 className="fz-55 mt-30">
+              {blog.Title}
             </h1>
-            <p class="sub-title mt-15">6 , August 2022 - By Admin</p>
+            <p className="sub-title mt-15">{blog.Date} - By Admin</p>
           </div>
-          <div class="main-img mb-80 mt-40">
-            <img src="/assets/imgs/blog/m.jpg" alt="" class="radius-5" />
+          <div className="main-img mb-80 mt-40">
+            <img src={blog.Image} alt={blog.Title} className="radius-5" style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+            }} />
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="cont">
-            <div class="text mb-20">
-              <div class="d-flex align-items-center mb-20">
-                <span class="fz-60 fw-500 main-color line-height-1 mr-10">
-                  A
+      <div className="row justify-content-center">
+        <div className="col-lg-9">
+          <div className="cont">
+            <div className="text mb-20">
+              <div className="d-flex align-items-center mb-20">
+                <span className="fz-60 fw-500 main-color line-height-1 mr-10">
+                  {blog.Title.charAt(0)}
                 </span>
                 <p>
-                  new report said earlier this week that Apple is working on a
-                  brand new laptop. A trusted Apple insider with a proven track
-                  record confirmed that Apple is working on the larger MacBook
-                  Air.
+                  {blog.Description}
                 </p>
               </div>
               <p>
-                new report said earlier this week that Apple is working on a
-                brand new laptop. Apple plans to release a 15-inch MacBook Air
-                in 2024, a first for the Air series. A trusted Apple insider
-                with a proven track record confirmed that Apple is working on
-                the larger MacBook Air.
+                {blog.Description}
               </p>
             </div>
-            <div class="text">
+            <div className="text">
               <p>
-                However, Apple might not include it in the Air series when it
-                launches it. As for the notebook’s release date, the 15-inch
-                MacBook isn’t coming soon. It’ll get a late 2024 release at
-                best, according to the new claims.
+                This is additional content for the blog post. The main description has been displayed above, and this section provides more detailed information about the topic discussed in the blog post.
               </p>
             </div>
             <div class="title mt-30">
@@ -195,33 +216,33 @@ function Project() {
               </div>
             </div>
 
-            <div class="next-prv-post flex mt-50">
+            <div className="next-prv-post flex mt-50">
               <div
-                class="thumb-post bg-img"
+                className="thumb-post bg-img"
                 data-background="assets/imgs/blog/1.jpg"
               >
-                <a href="single-blog">
-                  <span class="fz-12 text-u ls1 main-color mb-15">
-                    <i class="pe-7s-angle-left"></i>
+                <Link to="/blogs">
+                  <span className="fz-12 text-u ls1 main-color mb-15">
+                    <i className="pe-7s-angle-left"></i>
                     Prev Post
                   </span>
-                  <h6 class="fw-500 fz-16">
+                  <h6 className="fw-500 fz-16">
                     Ways to quickly traffic to <br /> your website.
                   </h6>
-                </a>
+                </Link>
               </div>
               <div
-                class="thumb-post ml-auto text-right bg-img"
+                className="thumb-post ml-auto text-right bg-img"
                 data-background="assets/imgs/blog/2.jpg"
               >
-                <a href="single-blog">
-                  <span class="fz-12 text-u ls1 main-color mb-15">
-                    Next Post <i class="pe-7s-angle-right"></i>
+                <Link to="/blogs">
+                  <span className="fz-12 text-u ls1 main-color mb-15">
+                    Next Post <i className="pe-7s-angle-right"></i>
                   </span>
-                  <h6 class="fw-500 fz-16">
+                  <h6 className="fw-500 fz-16">
                     How to Handle Your Good Employee.
                   </h6>
-                </a>
+                </Link>
               </div>
             </div>
 

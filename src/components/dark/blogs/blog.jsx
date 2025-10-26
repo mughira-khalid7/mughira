@@ -28,27 +28,32 @@ function Blog() {
         </h3>
       </div>
       <div className="row justify-content-center">
-        {blogs.map((blog, index) => (
-          <div key={index} className="col-lg-10">
+        {blogs.length > 0 && (
+          <div className="col-lg-10">
             <div className="item">
               <div className="img">
-                <img src={blog.Image} alt="" />
+                <img src={blogs[0].Image} alt={blogs[0].Title} style={{
+                  width: "100%",
+                  height: "400px",
+                  objectFit: "cover",
+                  borderRadius: "10px",
+                }} />
               </div>
               <div className="box">
                 <div className="cont text-center">
                   <span className="date">
                     <i className="fas fa-calendar-alt mr-10 main-color"></i>
-                    {blog.Date}
+                    {blogs[0].Date}
                   </span>
                   <h4>
-                    <Link to={blog.Link}>
-                      {blog.Title}
+                    <Link to={`/blog-details/0`}>
+                      {blogs[0].Title}
                     </Link>
                   </h4>
                   <div className="row justify-content-center mt-15">
                     <div className="col-lg-8">
                       <p>
-                        {blog.Description}
+                        {blogs[0].Description}
                       </p>
                     </div>
                   </div>
@@ -60,7 +65,7 @@ function Blog() {
                     </span>
                   </div>
                   <div className="ml-auto">
-                    <Link to={blog.Link}>
+                    <Link to={`/blog-details/0`}>
                       Read More{' '}
                       <svg
                         className="ml-5"
@@ -81,7 +86,7 @@ function Blog() {
               </div>
             </div>
           </div>
-        ))}
+        )}
       </div>
     </section>
   );

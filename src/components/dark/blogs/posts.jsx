@@ -30,11 +30,11 @@ function Posts() {
         </div>
       </div>
       <div className="row md-marg">
-        {blogs.map((blog, index) => (
-          <div key={index} className="col-lg-4">
+        {blogs.slice(1).map((blog, index) => (
+          <div key={index + 1} className="col-lg-4">
             <div className="item md-mb30 mb-30">
               <div className="img">
-                <img src={blog.Image} alt="" style={{
+                <img src={blog.Image} alt={blog.Title} style={{
                   width: "100%",
                   height: "220px",
                   objectFit: "cover",
@@ -47,7 +47,7 @@ function Posts() {
                     {blog.Date}
                   </span>
                   <h5>
-                    <Link to={blog.Link}>{blog.Title}</Link>
+                    <Link to={`/blog-details/${index + 1}`}>{blog.Title}</Link>
                   </h5>
                 </div>
                 <div className="info d-flex align-items-center">
@@ -57,7 +57,7 @@ function Posts() {
                     </span>
                   </div>
                   <div className="ml-auto">
-                    <Link to={blog.Link}>
+                    <Link to={`/blog-details/${index + 1}`}>
                       Read More{' '}
                       <svg
                         className="ml-5"
