@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../../components/Common/SEO';
 import ProgressScroll from '../../components/Common/ProgressScroll';
 import Cursor from '../../components/Common/cusor';
 import LoadingScreen from '../../components/Common/loader';
@@ -19,13 +19,25 @@ import Lines from '../../components/Common/Lines';
 function HomeDark() {
   return (
     <div>
-      <Helmet>
-        <title>Mughira - Dark Theam</title>
-        <link rel="icon" href="/assets/imgs/favicon.ico" />
-        <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css" />
-        <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-      </Helmet>
+      <SEO
+        title="Mughira Khalid | Full-Stack Engineer & Freelancer"
+        description="Full-Stack Engineer in Lahore specializing in PHP, Laravel, React.js, REST APIs, and MySQL. Available for freelance projects."
+        url="https://mughira.vercel.app/dark"
+        image="/assets/imgs/header/profile.jpg"
+      />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Portfolio Projects',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Dubai Fashion Week', url: 'https://mughira.vercel.app/project/dubai-fashion-week' },
+            { '@type': 'ListItem', position: 2, name: 'eZe Logs', url: 'https://mughira.vercel.app/project/eze-logs' },
+            { '@type': 'ListItem', position: 3, name: 'SHL London', url: 'https://mughira.vercel.app/project/shl-london' },
+            { '@type': 'ListItem', position: 4, name: 'Bright Vision Health', url: 'https://mughira.vercel.app/project/bright-vision-health' }
+          ]
+        })}
+      </script>
       <Cursor />
       <ContactUs />
       <Lines />

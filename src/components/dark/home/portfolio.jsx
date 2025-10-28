@@ -17,7 +17,7 @@ function Portfolio() {
             <div className="go-more full-width d-flex justify-content-end">
               <Link to="/works" className="d-flex">
                 <span>
-                  View All Works{' '}
+                  {/* View All Works{' '} */}
                   <svg
                     className="arrow-right"
                     xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ function Portfolio() {
               <div className="item mt-50 wow fadeInUp" data-wow-delay=".2s">
                 <div className="img">
                   <Link to={`/project/${item.slug}`}>
-                    <img src={item.photo} alt="" />
+                    <img src={item.photo} alt={`${item.title} - Portfolio project by Mughira Khalid`} />
                   </Link>
                 </div>
                 <div className="cont mt-30 d-flex align-items-center">

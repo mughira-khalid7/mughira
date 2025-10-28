@@ -23,7 +23,7 @@ function Landing() {
               <div className="img">
                 <div className="screen">
                   <a href="/preview" target="_blank">
-                    <img src="demos/1.png" alt="" />
+                    <img src="demos/1.png" alt="Portfolio demo layout 1" />
                   </a>
                 </div>
                 <div className="botm"></div>
@@ -38,7 +38,7 @@ function Landing() {
               <div className="img">
                 <div className="screen">
                   <a href="/light-m" target="_blank">
-                    <img src="demos/2.png" alt="" />
+                    <img src="demos/2.png" alt="Portfolio demo layout 2" />
                   </a>
                 </div>
                 <div className="botm"></div>

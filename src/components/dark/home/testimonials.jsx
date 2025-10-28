@@ -42,7 +42,7 @@ function Testimonials() {
                   <div className="item d-flex">
                     <div>
                       <div className="icon-img-60 mr-60">
-                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="Quote icon" />
                       </div>
                     </div>
                     <div>
@@ -70,7 +70,7 @@ function Testimonials() {
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/Testimonial1.webp" alt="" />
+                            <img src="/assets/imgs/testim/Testimonial1.webp" alt="Client testimonial 1" />
                           </div>
                         </div>
                         <div className="ml-30">
@@ -91,7 +91,7 @@ function Testimonials() {
                   <div className="item d-flex">
                     <div>
                       <div className="icon-img-60 mr-60">
-                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="Quote icon" />
                       </div>
                     </div>
                     <div>
@@ -119,7 +119,7 @@ function Testimonials() {
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/Testimonial4.jpg" alt="" />
+                            <img src="/assets/imgs/testim/Testimonial4.jpg" alt="Client testimonial 4" />
                           </div>
                         </div>
                         <div className="ml-30">
@@ -141,7 +141,7 @@ function Testimonials() {
                   <div className="item d-flex">
                     <div>
                       <div className="icon-img-60 mr-60">
-                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="Quote icon" />
                       </div>
                     </div>
                     <div>
@@ -169,7 +169,7 @@ function Testimonials() {
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/Testimonial3.jpg" alt="" />
+                            <img src="/assets/imgs/testim/Testimonial3.jpg" alt="Client testimonial 3" />
                           </div>
                         </div>
                         <div className="ml-30">
@@ -190,7 +190,7 @@ function Testimonials() {
                   <div className="item d-flex">
                     <div>
                       <div className="icon-img-60 mr-60">
-                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="Quote icon" />
                       </div>
                     </div>
                     <div>
@@ -218,7 +218,7 @@ function Testimonials() {
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/Testimonial2.jpg" alt="" />
+                            <img src="/assets/imgs/testim/Testimonial2.jpg" alt="Client testimonial 2" />
                           </div>
                         </div>
                         <div className="ml-30">
@@ -239,7 +239,7 @@ function Testimonials() {
                   <div className="item d-flex">
                     <div>
                       <div className="icon-img-60 mr-60">
-                        <img src="/assets/imgs/svg-assets/quote.png" alt="" />
+                        <img src="/assets/imgs/svg-assets/quote.png" alt="Quote icon" />
                       </div>
                     </div>
                     <div>
@@ -267,7 +267,7 @@ function Testimonials() {
                       <div className="d-flex align-items-center">
                         <div>
                           <div className="img">
-                            <img src="/assets/imgs/testim/Testimonial5.jpg" alt="" />
+                            <img src="/assets/imgs/testim/Testimonial5.jpg" alt="Client testimonial 5" />
                           </div>
                         </div>
                         <div className="ml-30">

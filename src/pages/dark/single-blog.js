@@ -14,7 +14,7 @@ function SingleBlog() {
   return (
     <div>
       <Helmet>
-        <title>Mughira - Dark Theam</title>
+        <title>Portfolio - Mughira Khalid</title>
         <link rel="icon" href="/assets/imgs/favicon.ico" />
         <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css" />

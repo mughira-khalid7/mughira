@@ -11,9 +11,10 @@ function Profile() {
   // Typing / erasing animation state
   const phrases = [
     'Freelancer',
-    'Laravel Developer',
-    'React Developer',
-    'API Expert',
+    'Backend Developer',
+    'AI Engineer',
+    'Frontend Developer',
+    'RESTful API Expert',
     'Problem Solver',
     'Tech Enthusiast',
   ];
@@ -72,7 +73,7 @@ function Profile() {
           <div className="cont valign">
             <div className="full-width">
               <div className="img relative">
-                <img src="/assets/imgs/header/profile.jpg" alt="" />
+                <img src="/assets/imgs/header/profile.jpg" alt="Portrait of Mughira Khalid" />
 
                 {/* Floating Icons */}
                 {['icon1.png', 'icon2.png', 'icon4.png',].map((icon, idx) => (
@@ -84,7 +85,7 @@ function Profile() {
                       animation: `float 3s ease-in-out ${iconDelays[idx]} infinite`,
                     }}
                   >
-                    <img src={`/assets/imgs/header/${icon}`} alt="" />
+                    <img src={`/assets/imgs/header/${icon}`} alt={`Header icon ${idx + 1}`} />
                   </span>
                 ))}
               </div>
@@ -95,10 +96,10 @@ function Profile() {
               </div>
 
               <div className="social text-center mt-20">
-                <a href="#0"><i className="fab fa-instagram"></i></a>
-                <a href="#0"><i className="fab fa-github"></i></a>
-                <a href="#0"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#0"><i className="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/mughira_khalid/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+                <a href="https://github.com/mughira-khalid7" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mughirakhalid/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
               </div>
             </div>
           </div>
