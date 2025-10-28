@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Profile() {
   // Keyframes animation as string
@@ -7,6 +7,63 @@ function Profile() {
   };
 
   const iconDelays = ['0s', '1s', '2s'];
+
+  // Typing / erasing animation state
+  const phrases = [
+    'Freelancer',
+    'Laravel Developer',
+    'React Developer',
+    'API Expert',
+    'Problem Solver',
+    'Tech Enthusiast',
+  ];
+
+  const [displayText, setDisplayText] = useState('Freelancer'); // default on load
+  const [isDeleting, setIsDeleting] = useState(true); // start by erasing the default text
+  const [phraseIndex, setPhraseIndex] = useState(1); // next phrase to type after default
+
+  useEffect(() => {
+    const currentFull = phrases[phraseIndex % phrases.length];
+
+    // Timing controls
+    const typingSpeed = 90; // ms per char
+    const deletingSpeed = 45; // ms per char
+    const holdFullDelay = 1100; // ms to hold when a word is fully typed
+    const holdEmptyDelay = 250; // ms to hold when field is empty before typing next
+
+    let timer;
+
+    if (isDeleting) {
+      // Erase one char from whatever is currently displayed
+      if (displayText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1));
+        }, deletingSpeed);
+      } else {
+        // Finished erasing; start typing next phrase
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+        }, holdEmptyDelay);
+      }
+    } else {
+      // Type towards the target phrase
+      if (displayText !== currentFull) {
+        timer = setTimeout(() => {
+          const next = currentFull.substring(0, displayText.length + 1);
+          setDisplayText(next);
+        }, typingSpeed);
+      } else {
+        // Reached full word; hold, then begin deleting and advance index
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+          setPhraseIndex((prev) => (prev + 1) % phrases.length);
+        }, holdFullDelay);
+      }
+    }
+
+    return () => clearTimeout(timer);
+    // Intentionally depend on these specific values to drive animation
+  }, [displayText, isDeleting, phraseIndex]);
 
   return (
     <section id="home" className="intro-profile md-mb50">
@@ -50,10 +107,10 @@ function Profile() {
         <div className="col-lg-8 content main-bg">
           <h1>
             Hello, I’m <span className="main-color">MUGHIRA KHALID</span>, Full-Stack
-            Developer and{' '}
+            Engineer and{' '}<br />
             <span className="bord">
-              Freelancer <i></i>
-            </span>{' '}
+              {displayText} <i></i>
+            </span>{' '}<br />
             Based in Lahore, Pakistan.
           </h1>
 
