@@ -48,7 +48,7 @@ function Price() {
               <div className="text-center mt-50">
                 <div className="butn-presv">
                   <a  
-                    href="mailto:mughira162@gmail.com?subject=Basic%20Plan%20Inquiry&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20really%20liked%20your%20work.%20I%20am%20interested%20in%20the%20Basic%20Plan%20and%20would%20like%20to%20move%20forward%20with%20you.%0D%0A%0D%0AHere%20are%20my%20details:%0D%0AName:%20[Your%20Name]%0D%0AEmail:%20[Your%20Email]%0D%0AProject%20Details:%20[Brief%20about%20project]" 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=mughira162@gmail.com&su=Basic%20Plan%20Inquiry&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20really%20liked%20your%20work.%20I%20am%20interested%20in%20the%20Basic%20Plan%20and%20would%20like%20to%20move%20forward%20with%20you.%0D%0A%0D%0AHere%20are%20my%20details:%0D%0AName:%20[Your%20Name]%0D%0AEmail:%20[Your%20Email]%0D%0AProject%20Details:%20[Brief%20about%20project]" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="butn butn-md butn-bord radius-5 text-u full-width">
@@ -92,7 +92,7 @@ function Price() {
               <div className="text-center mt-50">
                 <div className="butn-presv">
                     <a 
-                      href="mailto:mughira162@gmail.com?subject=Popular%20Plan%20Inquiry&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20I%20am%20interested%20in%20the%20Popular%20Plan%20and%20want%20to%20discuss%20next%20steps.%0D%0A%0D%0AHere%20are%20my%20details:%0D%0AName:%20[Your%20Name]%0D%0AEmail:%20[Your%20Email]%0D%0AProject%20Details:%20[Brief%20about%20project]" 
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=mughira162@gmail.com&su=Popular%20Plan%20Inquiry&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20I%20am%20interested%20in%20the%20Popular%20Plan%20and%20want%20to%20discuss%20next%20steps.%0D%0A%0D%0AHere%20are%20my%20details:%0D%0AName:%20[Your%20Name]%0D%0AEmail:%20[Your%20Email]%0D%0AProject%20Details:%20[Brief%20about%20project]" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="butn butn-md butn-bord radius-5 text-u full-width">
@@ -138,7 +138,7 @@ function Price() {
               <div className="text-center mt-50">
                 <div className="butn-presv">
                   <a 
-                    href="mailto:mughira162@gmail.com?subject=Premium%20Plan%20Inquiry&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20really%20liked%20it.%20I%20am%20interested%20in%20the%20Premium%20Plan%20and%20would%20like%20to%20proceed%20with%20you.%0D%0A%0D%0AHere%20are%20my%20details:%0D%0AName:%20[Your%20Name]%0D%0AEmail:%20[Your%20Email]%0D%0AProject%20Details:%20[Brief%20about%20project]" 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=mughira162@gmail.com&su=Premium%20Plan%20Inquiry&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20really%20liked%20it.%20I%20am%20interested%20in%20the%20Premium%20Plan%20and%20would%20like%20to%20proceed%20with%20you.%0D%0A%0D%0AHere%20are%20my%20details:%0D%0AName:%20[Your%20Name]%0D%0AEmail:%20[Your%20Email]%0D%0AProject%20Details:%20[Brief%20about%20project]" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="butn butn-md butn-bord radius-5 text-u full-width">

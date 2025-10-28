@@ -41,7 +41,7 @@ function NavTop() {
           <div className="col-md-4 valign">
             <div className="full-width info">
               <div className="d-flex justify-content-end">
-                <a href="mailto:mughira162@gmail.com">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mughira162@gmail.com&su=Portfolio%20Contact&body=Hello%20Mughira%20Khalid,%0D%0A%0D%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.%0D%0A%0D%0AName:%20[Your%20Name]%0D%0ACompany:%20[Company]%0D%0AProject%20Details:%20[Brief%20about%20project]" target="_blank" rel="noopener noreferrer">
                   <span className="sub-title fz-12">mughira162@gmail.com</span>
                 </a>
               </div>
