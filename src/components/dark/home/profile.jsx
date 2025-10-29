@@ -73,7 +73,7 @@ function Profile() {
           <div className="cont valign">
             <div className="full-width">
               <div className="img relative">
-                <img src="/assets/imgs/header/profile.jpg" alt="Portrait of Mughira Khalid" />
+                <img src="/assets/imgs/header/profile.HEIC" alt="Portrait of Mughira Khalid" />
 
                 {/* Floating Icons */}
                 {['icon1.png', 'icon2.png', 'icon4.png',].map((icon, idx) => (
