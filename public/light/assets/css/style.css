@@ -1836,7 +1836,7 @@ body.loaded {
 }
 
 .skills .item {
-  padding: 30px 30px 0;
+  padding: 15px 14px 0;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   position: relative;
@@ -1846,10 +1846,12 @@ body.loaded {
   font-size: 12px;
   padding: 3px 10px;
   border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid #54621d;
+  background-color: #373d1d;
+  color: #c8f31d;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: -14px;
+  right: -15px;
 }
 
 .skills .skill-progress {
@@ -2061,7 +2063,7 @@ body.loaded {
 
 .intro-profile .box-img .cont {
   padding: 40px 15px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px dashed #54621d;
   border-radius: 5px;
   min-height: calc(100% - 80px);
 }

@@ -14,15 +14,16 @@ import Price from '../../components/dark/home/price';
 import Profile from '../../components/dark/home/profile';
 import Services from '../../components/dark/home/services';
 import Skills from '../../components/dark/home/skills';
+import WhyMe from '../../components/dark/home/why-me';
 import Testimonials from '../../components/dark/home/testimonials';
 import Lines from '../../components/Common/Lines';
 function HomeDark() {
   return (
     <div>
       <SEO
-        title="Mughira Khalid | Full-Stack Engineer & Freelancer"
-        description="Full-Stack Engineer in Lahore specializing in PHP, Laravel, React.js, REST APIs, and MySQL. Available for freelance projects."
-        url="https://mughira.vercel.app/dark"
+        title="Mughira Khalid | Full-Stack Engineer Building High-Performance Web Applications"
+        description="Full-Stack Engineer specializing in Laravel, REST APIs, React.js & MySQL. Delivering scalable web solutions with proven 60%+ performance improvements. View my portfolio of successful projects."
+        url="https://mughira.vercel.app/"
         image="/assets/imgs/header/profile.jpg"
       />
       <script type="application/ld+json">
@@ -51,6 +52,7 @@ function HomeDark() {
           <section className="in-box">
             <Services />
             <Skills />
+            <WhyMe />
             <Portfolio />
             <Testimonials />
             <Price />

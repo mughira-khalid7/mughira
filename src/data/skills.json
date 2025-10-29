@@ -1,27 +1,44 @@
 [
   {
-    "photo": "/assets/imgs/resume/s1.gif",
-    "title": "FRONTEND DEVELOPMENT",
-    "persent": "85%"
-  },
-  {
     "photo": "/assets/imgs/resume/s2.gif",
     "title": "BACKEND DEVELOPMENT",
-    "persent": "90%"
+    "subtitle": "Laravel, PHP, MySQL",
+    "persent": "90%",
+    "tools": ["Laravel", "RESTful APIs", "OAuth 2.0", "JWT Auth", "MySQL", "Amazon AWS"]
+  },
+  {
+    "photo": "/assets/imgs/resume/s1.gif",
+    "title": "FRONTEND DEVELOPMENT",
+    "subtitle": "React, JavaScript, Tailwind",
+    "persent": "85%",
+    "tools": ["React.js", "Vue.js", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML5", "CSS3"]
   },
   {
     "photo": "/assets/imgs/resume/s3.gif",
-    "title": "RESTFUL API'S",
-    "persent": "80%"
+    "title": "API DEVELOPMENT",
+    "subtitle": "REST, GraphQL, Webhooks",
+    "persent": "88%",
+    "tools": ["RESTful Design", "API Documentation", "Postman", "Rate Limiting", "API Testing", "API Security"]
   },
   {
     "photo": "/assets/imgs/resume/s4.gif",
-    "title": "My SQL",
-    "persent": "78%"
+    "title": "DATABASE MANAGEMENT",
+    "subtitle": "MySQL, MongoDB",
+    "persent": "82%",
+    "tools": ["Query Optimization", "Indexing", "Migrations", "MongoDB Caching"]
   },
   {
     "photo": "/assets/imgs/resume/s5.gif",
-    "title": "JAVASCRIPT",
-    "persent": "70%"
+    "title": "JAVASCRIPT ECOSYSTEM",
+    "subtitle": "Async/Await, Promises, Fetch API",
+    "persent": "78%",
+    "tools": ["jQuery", "Ajax", "Async/Await", "XMLHttpRequest", "Axios", "Fetch API", "Promises"]
+  },
+  {
+    "photo": "/assets/imgs/resume/1s1.png",
+    "title": "DEVOPS & DEPLOYMENT",
+    "subtitle": "Git/GitHub, Docker, Cursor AI",
+    "persent": "70%",
+    "tools": ["Git", "GitHub Actions", "Cursor AI", "Vercel", "CI/CD", "AWS", "Azure", "Google Cloud", "Heroku"]
   }
 ]

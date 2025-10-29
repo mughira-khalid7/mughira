@@ -2,11 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 function SEO({
-  title = 'Mughira Khalid | Full-Stack Engineer & Freelancer',
-  description = 'Full-Stack Engineer in Lahore specializing in PHP, Laravel, React.js, REST APIs, and MySQL. Available for freelance projects.',
+  title = 'Mughira Khalid | Full-Stack Engineer Building High-Performance Web Applications',
+  description = 'Full-Stack Engineer in Lahore, Pakistan, specializing in building high-performance web applications with Laravel, REST APIs, React.js, and MySQL. Proven track record of delivering scalable solutions with 60%+ performance improvements.',
   url = 'https://mughira.vercel.app/',
   image = '/assets/imgs/header/profile.jpg',
-  keywords = 'Mughira Khalid, Full Stack Developer, Laravel Developer, React Developer, Freelancer Lahore, Web Developer Pakistan',
+  keywords = 'Mughira Khalid, Full Stack Developer Laravel, Laravel Expert Lahore, REST API Developer Pakistan, React Developer Lahore, Freelance Web Developer, PHP Laravel Specialist, MySQL Database Expert, Backend API Development',
   type = 'website',
   children,
 }) {

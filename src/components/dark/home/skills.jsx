@@ -29,8 +29,20 @@ function Skills() {
                     </div>
                     <div>
                       <h6 className="fz-18">{item.title}</h6>
+                      {item.subtitle && (
+                        <span className="fz-13 opacity-7">{item.subtitle}</span>
+                      )}
                     </div>
                   </div>
+                  
+                  {item.tools && (
+                    <div className="tools-list mb-20">
+                      {item.tools.map((tool, i) => (
+                        <span key={i} className="tool-tag">{tool}</span>
+                      ))}
+                    </div>
+                  )}
+                  
                   <div className="skill-progress">
                     <span className="progres" data-value={item.persent}></span>
                   </div>

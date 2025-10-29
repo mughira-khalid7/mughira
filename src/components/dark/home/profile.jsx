@@ -95,11 +95,19 @@ function Profile() {
                 <p className="fz-13 text-u">Available For Freelance</p>
               </div>
 
-              <div className="social text-center mt-20">
-                <a href="https://www.instagram.com/mughira_khalid/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-                <a href="https://github.com/mughira-khalid7" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mughirakhalid/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
+              <div className="social text-center mt-20" role="navigation" aria-label="Social media links">
+                <a href="https://www.instagram.com/mughira_khalid/" target="_blank" rel="noreferrer noopener" aria-label="Visit my Instagram profile">
+                  <i className="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/mughira-khalid7" target="_blank" rel="noreferrer noopener" aria-label="Visit my GitHub profile">
+                  <i className="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mughirakhalid/" target="_blank" rel="noreferrer noopener" aria-label="Visit my LinkedIn profile">
+                  <i className="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://x.com/mughira_khalid" target="_blank" rel="noreferrer noopener" aria-label="Visit my X profile">
+                  <i className="fab fa-twitter" aria-hidden="true"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -109,17 +117,34 @@ function Profile() {
           <h1>
             Hello, I’m <span className="main-color">MUGHIRA KHALID</span>, Full-Stack
             Engineer and{' '}<br />
-            <span className="bord">
+            <span className="bord main-color">
               {displayText} <i></i>
             </span>{' '}<br />
             Based in Lahore, Pakistan.
           </h1>
 
+          <div className="cta-buttons mt-40">
+            <div className="d-flex align-items-center flex-wrap butn-presv" style={{ gap: '1rem' }}>
+              <a 
+                href="#contact" 
+                className="butn butn-md butn-bg radius-5 skew main-colorbg"
+              >
+                <span>Hire Me for Your Project</span>
+              </a>
+              <a
+                href="#portfolio"
+                className="butn butn-md butn-bord radius-5 skew"
+              >
+                <span>View My Work</span>
+              </a>
+            </div>
+          </div>
+
           <div className="stauts mt-80">
             <div className="d-flex align-items-center">
               <div className="mr-40">
                 <div className="d-flex align-items-center">
-                  <h2>2.5</h2>
+                  <h2>02</h2>
                   <p>
                     Years <br /> of Experance
                   </p>
