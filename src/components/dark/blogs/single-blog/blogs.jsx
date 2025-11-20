@@ -2,33 +2,40 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Blogs() {
-  const { id } = useParams();
-  const [blogs, setBlogs] = useState([]);
+  // Commented out for future use - Related posts functionality
+  // const { id } = useParams();
+  // const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setBlogs(data);
-        } else if (data && Array.isArray(data.data)) {
-          setBlogs(data.data);
-        } else {
-          setBlogs([]);
-        }
-      })
-      .catch((err) => console.error("Error fetching blogs:", err));
-  }, []);
+  // Commented out for future use - API fetch for related posts
+  // useEffect(() => {
+  //   fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (Array.isArray(data)) {
+  //         setBlogs(data);
+  //       } else if (data && Array.isArray(data.data)) {
+  //         setBlogs(data.data);
+  //       } else {
+  //         setBlogs([]);
+  //       }
+  //     })
+  //     .catch((err) => console.error("Error fetching blogs:", err));
+  // }, []);
 
-  // Get related posts (exclude current post and limit to 3)
-  const getRelatedPosts = () => {
-    if (!blogs.length || id === undefined) return [];
-    const currentIndex = parseInt(id);
-    return blogs.filter((_, index) => index !== currentIndex).slice(0, 3);
-  };
+  // Commented out for future use - Get related posts logic
+  // const getRelatedPosts = () => {
+  //   if (!blogs.length || id === undefined) return [];
+  //   const currentIndex = parseInt(id);
+  //   return blogs.filter((_, index) => index !== currentIndex).slice(0, 3);
+  // };
 
-  const relatedPosts = getRelatedPosts();
+  // const relatedPosts = getRelatedPosts();
 
+  // Coming Soon state - No related posts displayed
+  return null;
+
+  // Commented out for future use - Original related posts JSX
+  /*
   return (
     <section className="sec-box blog section-padding pt-0">
       <div className="row">
@@ -101,6 +108,7 @@ function Blogs() {
       </div>
     </section>
   );
+  */
 }
 
 export default Blogs;

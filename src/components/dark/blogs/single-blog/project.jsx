@@ -3,31 +3,104 @@ import { useParams, Link } from 'react-router-dom';
 
 function Project() {
   const { id } = useParams();
-  const [blog, setBlog] = useState(null);
-  const [blogs, setBlogs] = useState([]);
+  // Commented out for future use - API fetch for blog data
+  // const [blog, setBlog] = useState(null);
+  // const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
-      .then((res) => res.json())
-      .then((data) => {
-        let blogData = [];
-        if (Array.isArray(data)) {
-          blogData = data;
-        } else if (data && Array.isArray(data.data)) {
-          blogData = data.data;
-        }
-        setBlogs(blogData);
-        if (blogData.length > 0 && id !== undefined) {
-          setBlog(blogData[parseInt(id)]);
-        }
-      })
-      .catch((err) => console.error("Error fetching blogs:", err));
-  }, [id]);
+  // Commented out for future use - API fetch
+  // useEffect(() => {
+  //   fetch("https://sheetdb.io/api/v1/j6lg9hvgk98kk")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       let blogData = [];
+  //       if (Array.isArray(data)) {
+  //         blogData = data;
+  //       } else if (data && Array.isArray(data.data)) {
+  //         blogData = data.data;
+  //       }
+  //       setBlogs(blogData);
+  //       if (blogData.length > 0 && id !== undefined) {
+  //         setBlog(blogData[parseInt(id)]);
+  //       }
+  //     })
+  //     .catch((err) => console.error("Error fetching blogs:", err));
+  // }, [id]);
 
-  if (!blog) {
-    return <div>Loading...</div>;
-  }
+  // Commented out for future use - Original blog content display
+  // if (!blog) {
+  //   return <div>Loading...</div>;
+  // }
 
+  // Coming Soon Message - Active
+  return (
+    <section className="sec-box main-post section-padding coming-soon-section">
+      <div className="row justify-content-center">
+        <div className="col-lg-8">
+          <div className="coming-soon-content text-center">
+            <div className="coming-soon-icon mb-40">
+              <i className="fas fa-blog" style={{ fontSize: '80px', color: 'var(--maincolor)' }}></i>
+            </div>
+            <h1 className="fz-55 mt-30 mb-20">
+              <span className="main-color">Coming Soon</span>
+            </h1>
+            <p className="sub-title fz-18 mb-30 opacity-8">
+              Blog content is currently under development. 
+              <br />
+              Check back soon for insightful articles about web development, Laravel, React.js, and more!
+            </p>
+            <div className="coming-soon-features mt-50 mb-50">
+              <div className="row">
+                <div className="col-md-4 mb-30">
+                  <div className="feature-item">
+                    <div className="feature-icon mb-20">
+                      <i className="fas fa-code" style={{ fontSize: '40px', color: 'var(--maincolor)' }}></i>
+                    </div>
+                    <h6 className="mb-10">Tech Insights</h6>
+                    <p className="fz-14 opacity-7">
+                      Articles about Laravel, React.js, and modern web development
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-4 mb-30">
+                  <div className="feature-item">
+                    <div className="feature-icon mb-20">
+                      <i className="fas fa-lightbulb" style={{ fontSize: '40px', color: 'var(--maincolor)' }}></i>
+                    </div>
+                    <h6 className="mb-10">Best Practices</h6>
+                    <p className="fz-14 opacity-7">
+                      Tips, tricks, and best practices for developers
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-4 mb-30">
+                  <div className="feature-item">
+                    <div className="feature-icon mb-20">
+                      <i className="fas fa-rocket" style={{ fontSize: '40px', color: 'var(--maincolor)' }}></i>
+                    </div>
+                    <h6 className="mb-10">Project Updates</h6>
+                    <p className="fz-14 opacity-7">
+                      Behind-the-scenes look at my latest projects
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="coming-soon-cta mt-50">
+              <Link to="/" className="butn butn-md butn-bg radius-5 skew main-colorbg">
+                <span>Back to Home</span>
+              </Link>
+              <Link to="/blogs" className="butn butn-md butn-bord radius-5 skew ml-20">
+                <span>View All Posts</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  // Commented out for future use - Original blog content JSX
+  /*
   return (
     <section className="sec-box main-post section-padding">
       <div className="row justify-content-center">
@@ -76,10 +149,10 @@ function Project() {
                 This is additional content for the blog post. The main description has been displayed above, and this section provides more detailed information about the topic discussed in the blog post.
               </p>
             </div>
-            <div class="title mt-30">
-              <h5 class="fw-500">What sizes do MacBook Airs come in?</h5>
+            <div className="title mt-30">
+              <h5 className="fw-500">What sizes do MacBook Airs come in?</h5>
             </div>
-            <div class="text mt-20">
+            <div className="text mt-20">
               <p>
                 Apple currently sells only one MacBook Air size. The laptop
                 comes in a 13-inch version that matches the pre-2021 13-inch
@@ -87,38 +160,38 @@ function Project() {
                 but the company discontinued that model in 2017.
               </p>
             </div>
-            <div class="post-qoute mt-50">
-              <h6 class="line-height-28 fz-20">
-                <span class="l-block">
+            <div className="post-qoute mt-50">
+              <h6 className="line-height-28 fz-20">
+                <span className="l-block">
                   Increase your site traffic and gain new customers with a
                   beautiful and functional blog.
                 </span>
-                <span class="sub-title main-color mt-20 mb-0">
+                <span className="sub-title main-color mt-20 mb-0">
                   {' '}
                   - UICamp Code
                 </span>
               </h6>
             </div>
-            <div class="mb-50 mt-50">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="iner-img sm-mb30">
+            <div className="mb-50 mt-50">
+              <div className="row">
+                <div className="col-sm-6">
+                  <div className="iner-img sm-mb30">
                     <img src="/assets/imgs/blog/b1.jpg" alt="" />
                   </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="iner-img">
+                <div className="col-sm-6">
+                  <div className="iner-img">
                     <img src="/assets/imgs/blog/b2.jpg" alt="" />
                   </div>
                 </div>
               </div>
             </div>
-            <div class="title mb-10">
-              <h5 class="fw-500">
+            <div className="title mb-10">
+              <h5 className="fw-500">
                 Apple currently sells only one MacBook Air size.
               </h5>
             </div>
-            <div class="text mb-20">
+            <div className="text mb-20">
               <p>
                 A new report said earlier this week that Apple is working on a
                 brand new laptop. Apple plans to release a 15-inch MacBook Air
@@ -127,9 +200,9 @@ function Project() {
                 the larger MacBook Air.
               </p>
             </div>
-            <div class="unorder-list mb-30">
-              <h6 class="mb-10">Ordered & Unordered Lists.</h6>
-              <ul class="rest">
+            <div className="unorder-list mb-30">
+              <h6 className="mb-10">Ordered & Unordered Lists.</h6>
+              <ul className="rest">
                 <li>Yet this above sewed flirted opened ouch</li>
                 <li>Goldfinch realistic sporadic ingenuous</li>
                 <li>
@@ -137,9 +210,9 @@ function Project() {
                 </li>
               </ul>
             </div>
-            <div class="order-list mb-30">
-              <h6 class="mb-10">Ordered & Unordered Lists.</h6>
-              <ul class="rest">
+            <div className="order-list mb-30">
+              <h6 className="mb-10">Ordered & Unordered Lists.</h6>
+              <ul className="rest">
                 <li>
                   <span>01 -</span> Yet this above sewed flirted opened ouch
                 </li>
@@ -152,19 +225,19 @@ function Project() {
                 </li>
               </ul>
             </div>
-            <div class="text">
+            <div className="text">
               <p>
                 However, Apple might not include it in the Air series when it
-                launches it. As for the notebook’s release date, the 15-inch
-                MacBook isn’t coming soon. It’ll get a late 2024 release at
+                launches it. As for the notebook's release date, the 15-inch
+                MacBook isn't coming soon. It'll get a late 2024 release at
                 best, according to the new claims.
               </p>
             </div>
 
-            <div class="info-area flex mt-20 pb-20 pt-20 bord-thin-top bord-thin-bottom">
+            <div className="info-area flex mt-20 pb-20 pt-20 bord-thin-top bord-thin-bottom">
               <div>
-                <div class="tags flex">
-                  <div class="valign">
+                <div className="tags flex">
+                  <div className="valign">
                     <span>Tags :</span>
                   </div>
                   <div>
@@ -173,40 +246,40 @@ function Project() {
                   </div>
                 </div>
               </div>
-              <div class="ml-auto">
-                <div class="share-icon flex">
-                  <div class="valign">
+              <div className="ml-auto">
+                <div className="share-icon flex">
+                  <div className="valign">
                     <span>Share :</span>
                   </div>
                   <div>
                     <a href="https://www.facebook.com/">
-                      <i class="fab fa-facebook-f"></i>
+                      <i className="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://www.twitter.com/">
-                      <i class="fab fa-twitter"></i>
+                      <i className="fab fa-twitter"></i>
                     </a>
                     <a href="https://www.youtube.com/">
-                      <i class="fab fa-youtube"></i>
+                      <i className="fab fa-youtube"></i>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="author-area mt-50">
-              <div class="flex">
-                <div class="author-img mr-30">
-                  <div class="img">
+            <div className="author-area mt-50">
+              <div className="flex">
+                <div className="author-img mr-30">
+                  <div className="img">
                     <img
                       src="/assets/imgs/blog/author1.jpg"
                       alt=""
-                      class="circle-img"
+                      className="circle-img"
                     />
                   </div>
                 </div>
-                <div class="cont valign">
-                  <div class="full-width">
-                    <h6 class="fw-500 mb-10">Chris Smith</h6>
+                <div className="cont valign">
+                  <div className="full-width">
+                    <h6 className="fw-500 mb-10">Chris Smith</h6>
                     <p>
                       Nulla eleifend, lectus eu gravida facilisis, ipsum metus
                       faucibus eros, vitae vulputate nibh libero ac metus.
@@ -245,121 +318,12 @@ function Project() {
                 </Link>
               </div>
             </div>
-
-            <div class="comments-post section-padding">
-              <div class="sec-head mb-60">
-                <h5>comments (2)</h5>
-              </div>
-              <div class="item-box bord-thin-bottom pb-30 mb-30">
-                <div class="flex">
-                  <div class="user-img mr-30">
-                    <div class="img circle-60 line-height-1">
-                      <img
-                        src="/assets/imgs/blog/author1.jpg"
-                        alt=""
-                        class="circle-img"
-                      />
-                    </div>
-                  </div>
-                  <div class="cont">
-                    <h6 class="mb-10">Megan fox</h6>
-                    <p>
-                      Ut elementum turpis lorem, id vulputate risus consequat
-                      vitae. Morbi eget urna imperdiet, pellentesque nulla id,
-                      tempus mauris.
-                    </p>
-                  </div>
-                </div>
-                <div class="replay-butn">
-                  <a href="#0">
-                    <span>Replay</span>
-                  </a>
-                </div>
-              </div>
-              <div class="item-box replayed">
-                <div class="flex">
-                  <div class="user-img mr-30">
-                    <div class="img circle-60 line-height-1">
-                      <img
-                        src="/assets/imgs/blog/author1.jpg"
-                        alt=""
-                        class="circle-img"
-                      />
-                    </div>
-                  </div>
-                  <div class="cont">
-                    <h6 class="mb-10">Megan fox</h6>
-                    <p>
-                      Ut elementum turpis lorem Morbi eget urna imperdiet,
-                      pellentesque nulla id, tempus mauris.
-                    </p>
-                  </div>
-                </div>
-                <div class="replay-butn">
-                  <a href="#0">
-                    <span>Replay</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="comments-from">
-              <div class="sec-head mb-60">
-                <h5>Leave a comment</h5>
-              </div>
-              <form id="contact-form" method="post" action="contact.php">
-                <div class="messages"></div>
-
-                <div class="controls row">
-                  <div class="col-lg-6">
-                    <div class="form-group mb-30">
-                      <input
-                        id="form_name"
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required="required"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6">
-                    <div class="form-group mb-30">
-                      <input
-                        id="form_email"
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required="required"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-group mb-30">
-                      <textarea
-                        id="form_message"
-                        name="message"
-                        placeholder="Message"
-                        rows="4"
-                        required="required"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-12 text-center mt-20">
-                    <button type="submit">
-                      <span class="text">Post comment</span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>
     </section>
   );
+  */
 }
 
 export default Project;

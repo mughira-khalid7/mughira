@@ -2,6 +2,111 @@
    CUSTOM PORTFOLIO IMPROVEMENTS
    ==================================== */
 
+/* Services Section - Equal Height Boxes */
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.services .col-md-6 {
+  display: flex;
+  flex-direction: column;
+}
+
+.services .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.services .item .icon-img-70 {
+  flex-shrink: 0;
+  margin-bottom: 30px;
+}
+
+.services .item h6 {
+  flex-shrink: 0;
+  margin-bottom: 15px;
+}
+
+.services .item p {
+  flex: 1;
+  margin-bottom: 0;
+  min-height: 60px;
+}
+
+.services .item .bord-color {
+  flex-shrink: 0;
+  margin-top: auto;
+  position: absolute;
+  bottom: -1px;
+  left: 4%;
+  width: 92%;
+}
+
+/* Blog Section - Equal Height Cards */
+.blog .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.blog .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.blog .item .img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog .item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.blog .item .box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.blog .item .cont {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.blog .item .cont h5 {
+  flex: 1;
+  margin-bottom: 0;
+  min-height: 60px;
+}
+
+.blog .item .info {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
 /* Hero Section Enhancements */
 .cta-buttons {
   margin-top: 2rem;
@@ -27,6 +132,99 @@ h1 {
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+/* Fix Layout Shift for Animated Text - Prevent content shifting */
+.intro-profile .content h1 .bord {
+  /* Override existing styles to prevent layout shift */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-height: 1.5em !important;
+  height: 1.5em !important;
+  line-height: 1.5em !important;
+  vertical-align: baseline;
+  position: relative;
+  overflow: visible;
+  white-space: nowrap;
+  box-sizing: border-box;
+  /* Set minimum width to accommodate longest text: "RESTful API Expert" */
+  min-width: 300px !important;
+  text-align: left;
+  /* Maintain consistent padding - override from style.css */
+  padding: 0 20px !important;
+  /* Prevent any height changes */
+  contain: layout style paint;
+  /* Ensure consistent border */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure the text content inside maintains consistent positioning */
+.intro-profile .content h1 .bord > *:not(i) {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5em;
+  height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep the decorative i element positioned correctly */
+.intro-profile .content h1 .bord i {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent the entire h1 line from shifting */
+.intro-profile .content h1 {
+  min-height: auto;
+  line-height: 1.2;
+  display: block;
+  /* Ensure consistent spacing between lines */
+  margin-bottom: 0;
+}
+
+/* Ensure line breaks maintain consistent spacing */
+.intro-profile .content h1 br {
+  line-height: inherit;
+  display: block;
+  height: 0;
+  margin: 0;
+}
+
+/* Responsive adjustments for animated text */
+@media (max-width: 767px) {
+  .intro-profile .content h1 .bord {
+    min-width: 250px !important;
+    min-height: 1.4em !important;
+    height: 1.4em !important;
+    line-height: 1.4em !important;
+  }
+  
+  .intro-profile .content h1 .bord > *:not(i) {
+    line-height: 1.4em;
+    height: 1.4em;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-profile .content h1 .bord {
+    min-width: 200px !important;
+    min-height: 1.3em !important;
+    height: 1.3em !important;
+    line-height: 1.3em !important;
+  }
+  
+  .intro-profile .content h1 .bord > *:not(i) {
+    line-height: 1.3em;
+    height: 1.3em;
+  }
 }
 
 h3 {
@@ -218,6 +416,98 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Coming Soon Section - Blog Details */
+.coming-soon-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon-content {
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.coming-soon-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.coming-soon-features .feature-item {
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.coming-soon-features .feature-item:hover {
+  border-color: rgba(200, 243, 29, 0.3);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.coming-soon-features .feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coming-soon-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.coming-soon-cta .butn {
+  min-width: 180px;
+}
+
+/* Responsive Coming Soon */
+@media (max-width: 767px) {
+  .coming-soon-content {
+    padding: 40px 20px;
+  }
+  
+  .coming-soon-icon i {
+    font-size: 60px !important;
+  }
+  
+  .coming-soon-content h1 {
+    font-size: 2rem !important;
+  }
+  
+  .coming-soon-features .col-md-4 {
+    margin-bottom: 2rem;
+  }
+  
+  .coming-soon-cta {
+    flex-direction: column;
+  }
+  
+  .coming-soon-cta .butn {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
 /* ====================================
    RESPONSIVE DESIGN
    ==================================== */
@@ -355,6 +645,49 @@ body {
   
   .outcome-item {
     margin-bottom: 15px;
+  }
+  
+  /* Services - Equal heights on mobile */
+  .services .row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .services .col-md-6 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .services .item {
+    min-height: 250px;
+  }
+  
+  /* Blog - Equal heights on mobile */
+  .blog .row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog .col-lg-4 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .blog .item {
+    height: auto;
+    min-height: auto;
+  }
+  
+  .blog .item .img {
+    height: 200px;
+  }
+  
+  .blog .item .cont h5 {
+    min-height: auto;
   }
 }
 
