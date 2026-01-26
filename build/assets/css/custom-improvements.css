@@ -1,0 +1,763 @@
+/* ====================================
+   CUSTOM PORTFOLIO IMPROVEMENTS
+   ==================================== */
+
+/* Services Section - Equal Height Boxes */
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.services .col-md-6 {
+  display: flex;
+  flex-direction: column;
+}
+
+.services .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.services .item .icon-img-70 {
+  flex-shrink: 0;
+  margin-bottom: 30px;
+}
+
+.services .item h6 {
+  flex-shrink: 0;
+  margin-bottom: 15px;
+}
+
+.services .item p {
+  flex: 1;
+  margin-bottom: 0;
+  min-height: 60px;
+}
+
+.services .item .bord-color {
+  flex-shrink: 0;
+  margin-top: auto;
+  position: absolute;
+  bottom: -1px;
+  left: 4%;
+  width: 92%;
+}
+
+/* Blog Section - Equal Height Cards */
+.blog .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.blog .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.blog .item .img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog .item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.blog .item .box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.blog .item .cont {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.blog .item .cont h5 {
+  flex: 1;
+  margin-bottom: 0;
+  min-height: 60px;
+}
+
+.blog .item .info {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* Hero Section Enhancements */
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+.main-colorbg {
+  background: var(--maincolor);
+  color: #000;
+  border-color: var(--maincolor);
+  transition: all 0.3s ease;
+}
+
+.main-colorbg:hover {
+  background: transparent;
+  color: var(--maincolor);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(200, 243, 29, 0.3);
+}
+
+/* Improved Typography */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Fix Layout Shift for Animated Text - Prevent content shifting */
+.intro-profile .content h1 .bord {
+  /* Override existing styles to prevent layout shift */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-height: 1.5em !important;
+  height: 1.5em !important;
+  line-height: 1.5em !important;
+  vertical-align: baseline;
+  position: relative;
+  overflow: visible;
+  white-space: nowrap;
+  box-sizing: border-box;
+  /* Set minimum width to accommodate longest text: "RESTful API Expert" */
+  min-width: 300px !important;
+  text-align: left;
+  /* Maintain consistent padding - override from style.css */
+  padding: 0 20px !important;
+  /* Prevent any height changes */
+  contain: layout style paint;
+  /* Ensure consistent border */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure the text content inside maintains consistent positioning */
+.intro-profile .content h1 .bord > *:not(i) {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5em;
+  height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep the decorative i element positioned correctly */
+.intro-profile .content h1 .bord i {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent the entire h1 line from shifting */
+.intro-profile .content h1 {
+  min-height: auto;
+  line-height: 1.2;
+  display: block;
+  /* Ensure consistent spacing between lines */
+  margin-bottom: 0;
+}
+
+/* Ensure line breaks maintain consistent spacing */
+.intro-profile .content h1 br {
+  line-height: inherit;
+  display: block;
+  height: 0;
+  margin: 0;
+}
+
+/* Responsive adjustments for animated text */
+@media (max-width: 767px) {
+  .intro-profile .content h1 .bord {
+    min-width: 250px !important;
+    min-height: 1.4em !important;
+    height: 1.4em !important;
+    line-height: 1.4em !important;
+  }
+  
+  .intro-profile .content h1 .bord > *:not(i) {
+    line-height: 1.4em;
+    height: 1.4em;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-profile .content h1 .bord {
+    min-width: 200px !important;
+    min-height: 1.3em !important;
+    height: 1.3em !important;
+    line-height: 1.3em !important;
+  }
+  
+  .intro-profile .content h1 .bord > *:not(i) {
+    line-height: 1.3em;
+    height: 1.3em;
+  }
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Project Cards */
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  /* transition: all 0.3s ease; */
+}
+
+.project-card:hover {
+  /* transform: translateY(-5px); */
+  border-color: rgba(200, 243, 29, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card .img img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .img img {
+  transform: scale(1.02);
+}
+
+/* Tech Badges */
+.tech-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(200, 243, 29, 0.1);
+  border: 1px solid rgba(200, 243, 29, 0.3);
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--maincolor);
+  margin: 0 6px 8px 0;
+  transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+  background: rgba(200, 243, 29, 0.2);
+  transform: translateY(-2px);
+}
+
+.outcome-item h5 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Why Me Section */
+.advantage-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.advantage-card:hover {
+  border-color: rgba(200, 243, 29, 0.5);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.icon-emoji {
+  font-size: 48px;
+  display: block;
+  line-height: 1;
+}
+
+.icon-image {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.growth-mindset {
+  background: rgba(200, 243, 29, 0.05);
+  border: 1px solid rgba(200, 243, 29, 0.2);
+}
+
+/* Skills Section - Tool Tags */
+.tool-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 0 5px 8px 0;
+  background: rgba(200, 243, 29, 0.15);
+  border-radius: 3px;
+  font-size: 11px;
+  color: var(--maincolor);
+  border: 1px solid rgba(200, 243, 29, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tool-tag:hover {
+  background: rgba(200, 243, 29, 0.25);
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(200, 243, 29, 0.9);
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(200, 243, 29, 1);
+  transform: scale(1.05);
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  backdrop-filter: blur(5px);
+}
+
+/* Accessibility Improvements */
+a:focus, 
+button:focus,
+.nav-item a:focus {
+  outline: 2px solid var(--maincolor);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.nav-item a:focus {
+  background: rgba(200, 243, 29, 0.2);
+}
+
+/* Better Color Contrast */
+body {
+  color: #e0e0e0;
+}
+
+.opacity-7 {
+  opacity: 0.85;
+}
+
+.sub-title {
+  color: var(--maincolor);
+  font-weight: 600;
+}
+
+/* Smooth Transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Coming Soon Section - Blog Details */
+.coming-soon-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon-content {
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.coming-soon-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.coming-soon-features .feature-item {
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.coming-soon-features .feature-item:hover {
+  border-color: rgba(200, 243, 29, 0.3);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.coming-soon-features .feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coming-soon-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.coming-soon-cta .butn {
+  min-width: 180px;
+}
+
+/* Responsive Coming Soon */
+@media (max-width: 767px) {
+  .coming-soon-content {
+    padding: 40px 20px;
+  }
+  
+  .coming-soon-icon i {
+    font-size: 60px !important;
+  }
+  
+  .coming-soon-content h1 {
+    font-size: 2rem !important;
+  }
+  
+  .coming-soon-features .col-md-4 {
+    margin-bottom: 2rem;
+  }
+  
+  .coming-soon-cta {
+    flex-direction: column;
+  }
+  
+  .coming-soon-cta .butn {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #000;
+    z-index: 999;
+    transition: right 0.3s ease;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar.mobile-open {
+    right: 0;
+  }
+  
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .navbar-nav .nav-item {
+    width: 100%;
+    margin: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-nav .nav-item a {
+    display: block;
+    padding: 12px 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item a:hover {
+    background: rgba(200, 243, 29, 0.2);
+    padding-left: 20px;
+  }
+  
+  .intro-profile .row {
+    flex-direction: column;
+  }
+  
+  .intro-profile .col-lg-4,
+  .intro-profile .col-lg-8 {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .intro-profile h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  
+  .intro-profile .cta-buttons {
+    justify-content: center;
+  }
+  
+  .intro-profile .stauts {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .intro-profile .stauts .mr-40 {
+    margin-right: 20px !important;
+    margin-bottom: 20px;
+  }
+  
+  .project-card .row {
+    flex-direction: column;
+  }
+  
+  .project-card .col-lg-5,
+  .project-card .col-lg-7 {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .project-card .img {
+    margin-bottom: 30px;
+  }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .cta-buttons .d-flex {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  
+  .cta-buttons .butn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .project-card {
+    padding: 20px;
+  }
+  
+  .advantage-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tech-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  
+  .growth-mindset {
+    padding: 30px 20px !important;
+  }
+  
+  .outcome-item {
+    margin-bottom: 15px;
+  }
+  
+  /* Services - Equal heights on mobile */
+  .services .row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .services .col-md-6 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .services .item {
+    min-height: 250px;
+  }
+  
+  /* Blog - Equal heights on mobile */
+  .blog .row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog .col-lg-4 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .blog .item {
+    height: auto;
+    min-height: auto;
+  }
+  
+  .blog .item .img {
+    height: 200px;
+  }
+  
+  .blog .item .cont h5 {
+    min-height: auto;
+  }
+}
+
+/* Small Mobile (< 576px) */
+@media (max-width: 575px) {
+  .navbar {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .mobile-menu-toggle {
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+  }
+  
+  .mobile-menu-toggle span {
+    width: 22px;
+  }
+  
+  .intro-profile .stauts h2 {
+    font-size: 1.5rem;
+  }
+  
+  .intro-profile .stauts p {
+    font-size: 0.85rem;
+  }
+  
+  .sec-head {
+    margin-bottom: 40px !important;
+  }
+  
+  .section-padding {
+    padding: 40px 0 !important;
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .mobile-menu-toggle,
+  .navbar,
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+  
+  .project-card,
+  .advantage-card {
+    break-inside: avoid;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .tech-badge,
+  .tool-tag {
+    border-width: 2px;
+  }
+  
+  .project-card,
+  .advantage-card {
+    border-width: 2px;
+  }
+}
+

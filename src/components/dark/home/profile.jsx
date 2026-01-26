@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 function Profile() {
-  // Keyframes animation as string
-  const floatAnimation = {
-    animation: 'float 5s ease-in-out infinite',
-  };
-
   const iconDelays = ['0s', '1s', '2s'];
 
   // Typing / erasing animation state
@@ -64,7 +59,7 @@ function Profile() {
 
     return () => clearTimeout(timer);
     // Intentionally depend on these specific values to drive animation
-  }, [displayText, isDeleting, phraseIndex]);
+  }, [displayText, isDeleting, phraseIndex, phrases]);
 
   return (
     <section id="home" className="intro-profile md-mb50">
