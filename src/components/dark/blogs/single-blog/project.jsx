@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Project() {
-  const { id } = useParams();
+  // const { id } = useParams(); // Commented out - not used in current implementation
   // Commented out for future use - API fetch for blog data
   // const [blog, setBlog] = useState(null);
   // const [blogs, setBlogs] = useState([]);

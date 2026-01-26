@@ -147,8 +147,8 @@ function Project() {
                     <span>Tags :</span>
                   </div>
                   <div>
-                    <a href="#">Tech</a>
-                    <a href="#">Gavi</a>
+                    <span className="tag">Tech</span>
+                    <span className="tag">Gavi</span>
                   </div>
                 </div>
               </div>

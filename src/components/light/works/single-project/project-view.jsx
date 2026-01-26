@@ -180,16 +180,16 @@ function ProjectView() {
             <div className="d-flex align-items-center mt-80 pt-80 bord-thin-top">
               <div className="prev">
                 <h6 className="sub-title">
-                  <a href="#">
+                  <button type="button" className="link-button" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', padding: 0 }}>
                     <i className="fas fa-long-arrow-alt-left"></i> Prev Project
-                  </a>
+                  </button>
                 </h6>
               </div>
               <div className="next ml-auto">
                 <h6 className="sub-title">
-                  <a href="#">
+                  <button type="button" className="link-button" style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', padding: 0 }}>
                     next Project <i className="fas fa-long-arrow-alt-right"></i>
-                  </a>
+                  </button>
                 </h6>
               </div>
             </div>

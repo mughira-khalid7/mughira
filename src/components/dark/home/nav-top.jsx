@@ -33,7 +33,7 @@ function NavTop() {
               <a href="https://www.linkedin.com/in/mughirakhalid/" target="_blank" rel="noreferrer">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
+              <a href="https://x.com/mughira_khalid" target="_blank" rel="noreferrer">
                 <i className="fab fa-twitter"></i>
               </a>
             </div>

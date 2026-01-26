@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+// Unused imports removed - functionality commented out for future use
 
 function Blogs() {
   // Commented out for future use - Related posts functionality

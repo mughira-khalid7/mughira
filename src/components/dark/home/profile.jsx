@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
+// Typing / erasing animation phrases - constant array
+const phrases = [
+  'Freelancer',
+  'Backend Developer',
+  'AI Engineer',
+  'Frontend Developer',
+  'RESTful API Expert',
+  'Problem Solver',
+  'Tech Enthusiast',
+];
+
 function Profile() {
   const iconDelays = ['0s', '1s', '2s'];
-
-  // Typing / erasing animation state
-  const phrases = [
-    'Freelancer',
-    'Backend Developer',
-    'AI Engineer',
-    'Frontend Developer',
-    'RESTful API Expert',
-    'Problem Solver',
-    'Tech Enthusiast',
-  ];
 
   const [displayText, setDisplayText] = useState('Freelancer'); // default on load
   const [isDeleting, setIsDeleting] = useState(true); // start by erasing the default text
@@ -59,7 +59,8 @@ function Profile() {
 
     return () => clearTimeout(timer);
     // Intentionally depend on these specific values to drive animation
-  }, [displayText, isDeleting, phraseIndex, phrases]);
+    // phrases is a constant array defined outside component, so it's stable
+  }, [displayText, isDeleting, phraseIndex]);
 
   return (
     <section id="home" className="intro-profile md-mb50">
