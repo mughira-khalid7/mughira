@@ -1,18 +1,6 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
-function NavTop() {
-  const handleMenuToggle = useCallback(() => {
-    const navbarEl = document.querySelector('.navbar');
-    if (!navbarEl) return;
-    const isVisible = window.getComputedStyle(navbarEl).display !== 'none';
-    if (isVisible) {
-      navbarEl.style.display = 'none';
-      navbarEl.classList.remove('active');
-    } else {
-      navbarEl.style.display = 'block';
-      navbarEl.classList.add('active');
-    }
-  }, []);
+function NavTop({ mobileMenuOpen, onMenuToggle }) {
   return (
     <div className="nav-top pt-30 pb-30">
       <div className="container">
@@ -52,11 +40,12 @@ function NavTop() {
           className="nav-butn"
           role="button"
           tabIndex={0}
-          onClick={handleMenuToggle}
+          onClick={onMenuToggle}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') handleMenuToggle();
+            if (e.key === 'Enter' || e.key === ' ') onMenuToggle();
           }}
           aria-label="Toggle navigation menu"
+          aria-expanded={!!mobileMenuOpen}
         >
           <span className="pe-7s-menu"></span>
         </div>

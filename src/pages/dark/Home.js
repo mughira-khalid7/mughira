@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SEO from '../../components/Common/SEO';
 import ProgressScroll from '../../components/Common/ProgressScroll';
 import Cursor from '../../components/Common/cusor';
@@ -18,6 +18,19 @@ import WhyMe from '../../components/dark/home/why-me';
 import Testimonials from '../../components/dark/home/testimonials';
 import Lines from '../../components/Common/Lines';
 function HomeDark() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <div>
       <SEO
@@ -45,10 +58,10 @@ function HomeDark() {
       <LoadingScreen />
       <ProgressScroll />
       <div>
-        <NavTop />
+        <NavTop mobileMenuOpen={mobileMenuOpen} onMenuToggle={() => setMobileMenuOpen((prev) => !prev)} />
         <main className="container">
           <Profile />
-          <Navbar />
+          <Navbar mobileMenuOpen={mobileMenuOpen} onMenuClose={() => setMobileMenuOpen(false)} />
           <section className="in-box">
             <Services />
             <Skills />

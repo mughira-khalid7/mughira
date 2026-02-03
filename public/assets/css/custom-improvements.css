@@ -153,8 +153,7 @@ h1 {
   text-align: left;
   /* Maintain consistent padding - override from style.css */
   padding: 0 20px !important;
-  /* Prevent any height changes */
-  contain: layout style paint;
+  /* contain removed - it caused vertical clipping of "RESTful API Expert" */
   /* Ensure consistent border */
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
@@ -164,7 +163,7 @@ h1 {
   display: inline-block;
   vertical-align: middle;
   line-height: 1.5em;
-  height: 1.5em;
+  min-height: 1.5em;
   margin: 0;
   padding: 0;
 }
@@ -188,6 +187,9 @@ h1 {
   display: block;
   /* Ensure consistent spacing between lines */
   margin-bottom: 0;
+  /* Allow wrapping on narrow viewports to prevent clipping (overflow-x: hidden on body) */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Ensure line breaks maintain consistent spacing */
@@ -201,29 +203,97 @@ h1 {
 /* Responsive adjustments for animated text */
 @media (max-width: 767px) {
   .intro-profile .content h1 .bord {
-    min-width: 250px !important;
+    min-width: 180px !important;
     min-height: 1.4em !important;
     height: 1.4em !important;
     line-height: 1.4em !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .intro-profile .content h1 .bord > *:not(i) {
     line-height: 1.4em;
     height: 1.4em;
   }
+  
+  /* Less top space on mobile */
+  .intro-profile .box-img {
+    padding: 16px 16px 16px !important;
+  }
+  
+  .intro-profile .box-img .cont {
+    padding: 16px 12px !important;
+  }
+  
+  .intro-profile .box-img .info.mt-30 {
+    margin-top: 16px !important;
+  }
+  
+  .intro-profile .box-img .social.mt-20 {
+    margin-top: 12px !important;
+  }
+  
+  .intro-profile .content {
+    padding: 20px 24px 30px !important;
+    text-align: center;
+  }
+  
+  .intro-profile .content h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 575px) {
   .intro-profile .content h1 .bord {
-    min-width: 200px !important;
+    min-width: 120px !important;
+    max-width: 100%;
     min-height: 1.3em !important;
     height: 1.3em !important;
     line-height: 1.3em !important;
+    /* Force onto own line on mobile so "Engineer and" + bord doesn't overflow */
+    display: block !important;
+    width: fit-content;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0.25em;
+    text-align: center !important;
   }
   
   .intro-profile .content h1 .bord > *:not(i) {
     line-height: 1.3em;
     height: 1.3em;
+  }
+  
+  /* Less top space on small mobile */
+  .intro-profile .box-img {
+    padding: 12px 12px 12px !important;
+  }
+  
+  .intro-profile .box-img .cont {
+    padding: 12px 10px 0px 10px !important;
+  }
+  
+  .intro-profile .content {
+    padding: 16px 20px 24px !important;
+    text-align: center;
+  }
+  
+  .intro-profile .content h1 {
+    font-size: 1.35rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .intro-profile .content h1 .bord {
+    min-width: 90px !important;
+  }
+  
+  .intro-profile .content h1 {
+    font-size: 1.2rem;
   }
 }
 
@@ -379,9 +449,20 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 998;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: mobileOverlayFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes mobileOverlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Accessibility Improvements */
@@ -518,45 +599,146 @@ body {
     display: flex;
   }
   
+  /* Mobile menu panel - slide-in drawer */
   .navbar {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: min(320px, 88vw);
+    max-width: 320px;
     height: 100vh;
-    background: #000;
+    height: 100dvh;
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
     z-index: 999;
-    transition: right 0.3s ease;
-    padding: 80px 20px 20px;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+    padding: 0;
     overflow-y: auto;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    box-shadow: none;
+    border-left: 3px solid transparent;
+    border-radius: 12px 0 0 12px;
+    display: flex !important;
+    flex-direction: column;
   }
   
   .navbar.mobile-open {
     right: 0;
+    display: flex !important;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    border-left-color: var(--maincolor);
+  }
+  
+  /* Mobile menu header: close button pinned to top right corner of panel */
+  .mobile-menu-header {
+    position: relative;
+    flex-shrink: 0;
+    min-height: 52px;
+  }
+  
+  .mobile-menu-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.06);
+    color: #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  }
+  
+  .mobile-menu-close:hover {
+    background: rgba(200, 243, 29, 0.2);
+    color: var(--maincolor);
+    transform: scale(1.05);
+  }
+  
+  .mobile-menu-close:active {
+    transform: scale(0.98);
+  }
+  
+  .mobile-menu-close:focus {
+    outline: 2px solid var(--maincolor);
+    outline-offset: 2px;
+  }
+  
+  .mobile-menu-close .pe-7s-close {
+    font-size: 22px;
+    display: block;
+    line-height: 1;
+  }
+  
+  /* Nav items container - with top padding */
+  .navbar .row.rest {
+    margin: 0;
+    padding: 16px 0 24px;
+    flex: 1;
+    min-height: 0;
+  }
+  
+  .navbar .col-lg-8.rest {
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding: 0;
   }
   
   .navbar-nav {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
+    padding: 0 16px !important;
+    margin: 0 !important;
   }
   
   .navbar-nav .nav-item {
     width: 100%;
-    margin: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    transform: translateX(12px);
+    animation: mobileMenuItemIn 0.4s ease forwards;
+  }
+  
+  .navbar.mobile-open .navbar-nav .nav-item:nth-child(1) { animation-delay: 0.05s; }
+  .navbar.mobile-open .navbar-nav .nav-item:nth-child(2) { animation-delay: 0.1s; }
+  .navbar.mobile-open .navbar-nav .nav-item:nth-child(3) { animation-delay: 0.15s; }
+  .navbar.mobile-open .navbar-nav .nav-item:nth-child(4) { animation-delay: 0.2s; }
+  .navbar.mobile-open .navbar-nav .nav-item:nth-child(5) { animation-delay: 0.25s; }
+  .navbar.mobile-open .navbar-nav .nav-item:nth-child(6) { animation-delay: 0.3s; }
+  
+  @keyframes mobileMenuItemIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   
   .navbar-nav .nav-item a {
     display: block;
-    padding: 12px 15px;
+    padding: 16px 18px;
     width: 100%;
-    transition: all 0.3s ease;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #e8e8e8;
+    transition: background 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+    border-radius: 8px;
+    margin: 2px 0;
   }
   
   .navbar-nav .nav-item a:hover {
-    background: rgba(200, 243, 29, 0.2);
-    padding-left: 20px;
+    background: rgba(200, 243, 29, 0.12);
+    color: var(--maincolor);
+    padding-left: 24px;
+  }
+  
+  .navbar-nav .nav-item a:focus {
+    background: rgba(200, 243, 29, 0.15);
+    outline-offset: 2px;
   }
   
   .intro-profile .row {
@@ -569,12 +751,47 @@ body {
     max-width: 100%;
   }
   
-  .intro-profile h1 {
+  /* Reduce top space on tablet – profile section */
+  .intro-profile .box-img {
+    padding: 24px 24px 20px !important;
+  }
+  
+  .intro-profile .box-img .cont {
+    padding: 20px 15px 0px 15px !important;
+    min-height: auto;
+    text-align: center;
+  }
+  
+  .intro-profile .box-img .info.mt-30 {
+    margin-top: 20px !important;
+  }
+  
+  .intro-profile .box-img .social.mt-20 {
+    margin-top: 14px !important;
+  }
+  
+  .intro-profile .content {
+    padding: 24px 24px 40px !important;
+    text-align: center;
+  }
+  
+  .intro-profile .content h1 {
     font-size: 1.75rem;
     text-align: center;
   }
   
+  .intro-profile .content h1 .bord {
+    justify-content: center !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   .intro-profile .cta-buttons {
+    justify-content: center;
+  }
+  
+  .intro-profile .cta-buttons .d-flex {
     justify-content: center;
   }
   
@@ -584,9 +801,15 @@ body {
     text-align: center;
   }
   
+  .intro-profile .stauts > .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 20px;
+  }
+  
   .intro-profile .stauts .mr-40 {
-    margin-right: 20px !important;
-    margin-bottom: 20px;
+    margin-right: 0 !important;
+    margin-bottom: 0;
   }
   
   .project-card .row {
@@ -615,14 +838,49 @@ body {
   }
   
   .cta-buttons .d-flex {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: stretch !important;
   }
   
   .cta-buttons .butn {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    width: auto;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+  }
+  
+  /* Stats section: center and smaller numbers on mobile */
+  .intro-profile .stauts,
+  .intro-profile .content .stauts {
+    text-align: center;
+  }
+  .intro-profile .stauts > .d-flex {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .intro-profile .stauts .mr-40,
+  .intro-profile .content .stauts .mr-40 {
+    text-align: center;
+  }
+  .intro-profile .stauts .mr-40 .d-flex,
+  .intro-profile .content .stauts .mr-40 .d-flex {
+    justify-content: center;
+    text-align: center;
+  }
+  .intro-profile .stauts h2,
+  .intro-profile .content .stauts h2 {
+    font-size: 1.75rem !important;
+    font-weight: 700;
+  }
+  .intro-profile .stauts p,
+  .intro-profile .content .stauts p {
+    white-space: nowrap;
+  }
+  .intro-profile .stauts .butn-presv {
+    justify-content: center;
+    display: flex;
   }
   
   .project-card {
@@ -693,9 +951,34 @@ body {
 
 /* Small Mobile (< 576px) */
 @media (max-width: 575px) {
+  .nav-top.pt-30 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  
   .navbar {
-    width: 100%;
-    right: -100%;
+    width: min(100%, 320px);
+    max-width: 100%;
+  }
+  
+  .mobile-menu-header {
+    min-height: 48px;
+  }
+  
+  .mobile-menu-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mobile-menu-close .pe-7s-close {
+    font-size: 20px;
+  }
+  
+  .navbar-nav .nav-item a {
+    padding: 14px 16px;
+    font-size: 13px;
   }
   
   .mobile-menu-toggle {
@@ -708,12 +991,19 @@ body {
     width: 22px;
   }
   
-  .intro-profile .stauts h2 {
-    font-size: 1.5rem;
+  .intro-profile .stauts h2,
+  .intro-profile .content .stauts h2 {
+    font-size: 1.75rem;
   }
   
-  .intro-profile .stauts p {
+  .intro-profile .stauts p,
+  .intro-profile .content .stauts p {
     font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  .intro-profile .stauts > .d-flex {
+    gap: 12px 16px;
   }
   
   .sec-head {

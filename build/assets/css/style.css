@@ -2112,8 +2112,8 @@ body.loaded {
 }
 
 .intro-profile .box-img .cont {
-  padding: 40px 15px;
-  border: 1px dashed #54621d;
+  padding: 10px 15px;
+  /* border: 1px dashed #54621d; */
   border-radius: 5px;
   min-height: calc(100% - 80px);
 }

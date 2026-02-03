@@ -69,7 +69,7 @@ function Profile() {
           <div className="cont valign">
             <div className="full-width">
               <div className="img relative">
-                <img src="/assets/imgs/header/profile.png" alt="Portrait of Mughira Khalid" />
+                <img style={{ borderRadius: '10px' }} src="/assets/imgs/header/profile.png" alt="Portrait of Mughira Khalid" />
 
                 {/* Floating Icons */}
                 {['icon1.png', 'icon2.png', 'icon4.png',].map((icon, idx) => (
@@ -111,11 +111,10 @@ function Profile() {
 
         <div className="col-lg-8 content main-bg">
           <h1>
-            Hello, I’m <span className="main-color">MUGHIRA KHALID</span>, Full-Stack
-            Engineer and{' '}<br />
-            <span className="bord main-color">
-              {displayText} <i></i>
-            </span>{' '}<br />
+            Hello, I’m <span className="main-color"><i>MUGHIRA KHALID</i></span>
+            <span className="bord">
+            Full-Stack Developer
+            </span>
             Based in Lahore, Pakistan.
           </h1>
 
@@ -125,24 +124,24 @@ function Profile() {
                 href="#contact" 
                 className="butn butn-md butn-bg radius-5 skew main-colorbg"
               >
-                <span>Hire Me for Your Project</span>
+                <span>Hire Me</span>
               </a>
               <a
                 href="#portfolio"
                 className="butn butn-md butn-bord radius-5 skew"
               >
-                <span>View My Work</span>
+                <span>My Work</span>
               </a>
             </div>
           </div>
 
-          <div className="stauts mt-80">
+          <div className="stauts mt-40">
             <div className="d-flex align-items-center">
               <div className="mr-40">
                 <div className="d-flex align-items-center">
-                  <h2>02</h2>
+                  <h2>2.5+</h2>
                   <p>
-                    Years <br /> of Experance
+                    Years <br /> of Experience
                   </p>
                 </div>
               </div>
@@ -161,7 +160,7 @@ function Profile() {
                     download="Mughira-Khalid.pdf"
                     className="butn butn-md butn-bord radius-5 skew"
                   >
-                    <span>Download C.V</span>
+                    <span>Curriculum Vitae</span>
                   </a>
                 </div>
               </div>

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-scroll';
 
-function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+function Navbar({ mobileMenuOpen = false, onMenuClose }) {
 
   const menuItems = [
     { to: 'home', label: 'Home' },
@@ -15,28 +14,18 @@ function Navbar() {
 
   return (
     <>
-      {/* Mobile Menu Toggle */}
-      <button 
-        className="mobile-menu-toggle d-lg-none"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-label="Toggle navigation menu"
-        aria-expanded={mobileMenuOpen}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      {/* Overlay for mobile */}
+      {/* Overlay for mobile - fades in when menu opens */}
       {mobileMenuOpen && (
         <div 
-          className="mobile-menu-overlay"
-          onClick={() => setMobileMenuOpen(false)}
+          className="mobile-menu-overlay d-lg-none"
+          onClick={onMenuClose}
           aria-hidden="true"
         />
       )}
+      
+      <nav className={`navbar ${mobileMenuOpen ? 'mobile-open' : ''}`} aria-label="Main navigation">
+        
 
-      <nav className={`navbar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
         <div className="row justify-content-end rest">
           <div className="col-lg-8 rest">
             <ul className="navbar-nav main-bg d-flex justify-content-end">
@@ -48,7 +37,7 @@ function Navbar() {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={onMenuClose}
                   >
                     <span>{item.label}</span>
                   </Link>
