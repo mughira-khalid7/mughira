@@ -21,12 +21,12 @@ const scrollToTop = () => {
     updateProgress();
     window.addEventListener('scroll', updateProgress);
     window.addEventListener('scroll', function () {
+      const wrap = document.querySelector('.progress-wrap');
+      if (!wrap) return;
       if (window.pageYOffset > offset) {
-        progressWrap.classList.add('active-progress');
+        wrap.classList.add('active-progress');
       } else {
-        document
-          .querySelector('.progress-wrap')
-          .classList.remove('active-progress');
+        wrap.classList.remove('active-progress');
       }
     });
     progressWrap.addEventListener('click', function (event) {

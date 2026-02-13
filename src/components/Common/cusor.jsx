@@ -4,9 +4,11 @@ function Cursor() {
   useEffect(() => {
     const link = document.querySelectorAll('.hover-this');
     const cursor = document.querySelector('.cursor');
+    if (!cursor) return;
 
     const animateit = function (e) {
       const hoverAnim = this.querySelector('.hover-anim');
+      if (!hoverAnim) return;
       const { offsetX: x, offsetY: y } = e;
       const { offsetWidth: width, offsetHeight: height } = this;
       const move = 25;
@@ -28,10 +30,10 @@ function Cursor() {
 
     document.querySelectorAll('a, .cursor-pointer').forEach((el) => {
       el.addEventListener('mousemove', () => {
-        cursor.classList.add('cursor-active');
+        if (cursor) cursor.classList.add('cursor-active');
       });
       el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('cursor-active');
+        if (cursor) cursor.classList.remove('cursor-active');
       });
     });
   }, []);

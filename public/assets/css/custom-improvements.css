@@ -593,10 +593,155 @@ body {
    RESPONSIVE DESIGN
    ==================================== */
 
+/* Global responsive base: prevent overflow, scale images */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
 /* Tablet (768px - 991px) */
 @media (max-width: 991px) {
   .mobile-menu-toggle {
     display: flex;
+  }
+  
+  .sec-box {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  
+  .price .item .type {
+    min-width: 0 !important;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .price .item {
+    margin-top: 40px;
+    padding: 20px 16px;
+  }
+  
+  .price .item .content .feat li {
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  
+  .contact .row {
+    flex-direction: column;
+  }
+  
+  .contact .col-lg-5,
+  .contact .col-lg-7 {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .contact .sec-head .social-text {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .contact .sec-head .social-text .mr-30 {
+    margin-right: 0;
+  }
+  
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact form .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .testimonials .pad-left {
+    padding-left: 24px;
+  }
+  
+  .testimonials .cont p {
+    font-size: 1rem;
+  }
+  
+  .butn.butn-md {
+    padding: 12px 28px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .portfolio .item .img > a,
+  .portfolio .item .img {
+    height: 280px;
+  }
+  
+  .portfolio .item .img img {
+    object-fit: cover;
+  }
+  
+  .intro-profile .box-img .img img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .intro-profile .box-img .img .icon {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+  }
+  
+  .intro-profile .box-img .img .icon img {
+    max-width: 100%;
+  }
+  
+  .intro-profile .box-img .img .icon:nth-of-type(1) {
+    left: -10px;
+    top: 20px;
+  }
+  .intro-profile .box-img .img .icon:nth-of-type(2) {
+    right: -10px;
+  }
+  .intro-profile .box-img .img .icon:nth-of-type(3) {
+    left: 10px;
+    bottom: 0;
+  }
+  
+  .sec-head.mb-80 {
+    margin-bottom: 50px !important;
+  }
+  
+  .section-padding {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  
+  footer.pb-30.pt-30 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  
+  footer .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  footer .fz-13 {
+    font-size: 13px !important;
+    word-wrap: break-word;
   }
   
   /* Mobile menu panel - slide-in drawer */
@@ -947,6 +1092,210 @@ body {
   .blog .item .cont h5 {
     min-height: auto;
   }
+  
+  /* Mobile: section padding and containers */
+  .sec-box {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .sec-head.mb-80 {
+    margin-bottom: 36px !important;
+  }
+  
+  .section-padding {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  /* Buttons: touch-friendly (min 44px), full width where stacked */
+  .butn,
+  .butn.butn-md,
+  .butn.butn-sm {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .cta-buttons .butn-presv .butn {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  .price .item .butn-presv .butn,
+  .price .item a.butn {
+    width: 100%;
+    min-height: 48px;
+  }
+  
+  .contact form button[type="submit"] {
+    min-height: 48px;
+    width: 100%;
+    padding: 14px 24px;
+  }
+  
+  /* Profile: image and icons scale on mobile */
+  .intro-profile .box-img .img {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .intro-profile .box-img .img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .intro-profile .box-img .img .icon {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+  
+  .intro-profile .box-img .img .icon img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .intro-profile .box-img .img .icon:nth-of-type(1) {
+    left: 5px;
+    top: 10px;
+  }
+  
+  .intro-profile .box-img .img .icon:nth-of-type(2) {
+    right: 5px;
+  }
+  
+  .intro-profile .box-img .img .icon:nth-of-type(3) {
+    left: 10px;
+    bottom: 5px;
+  }
+  
+  /* Portfolio: flexible image height on mobile */
+  .portfolio .item .img > a,
+  .portfolio .item .img {
+    height: 220px;
+    min-height: 200px;
+  }
+  
+  .portfolio .item .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .project-card .img,
+  .project-card .img a {
+    overflow: hidden;
+  }
+  
+  .project-card .img img {
+    max-width: 100%;
+    height: auto;
+    min-height: 180px;
+    object-fit: cover;
+  }
+  
+  /* Text: prevent overflow, readable sizes */
+  .sec-head h3,
+  .sec-head h2 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .sec-head .fz-50 {
+    font-size: 1.5rem !important;
+  }
+  
+  .price .item .amount h2 {
+    font-size: 1.75rem;
+  }
+  
+  .price .item .amount .fz-20 {
+    font-size: 14px;
+  }
+  
+  .price .item .amount sub {
+    display: block;
+    margin-top: 2px;
+  }
+  
+  .contact .sec-head .phone.fz-30 {
+    font-size: 1.25rem;
+  }
+  
+  .contact .sec-head .phone a {
+    word-break: break-all;
+  }
+  
+  .testimonials .cont p.fz-20 {
+    font-size: 1rem;
+  }
+  
+  .testimonials .icon-qoute {
+    font-size: 80px !important;
+  }
+  
+  footer.pb-30.pt-30 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  footer .fz-13 {
+    font-size: 12px !important;
+    padding: 0 8px;
+  }
+  
+  /* Contact form: full width inputs on mobile */
+  .contact form .controls .form-group input,
+  .contact form .controls .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact form .controls .row > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  /* Go-more / View All button */
+  .go-more .butn {
+    min-height: 44px;
+  }
+  
+  .sec-head .row.justify-content-center + .row,
+  .portfolio .sec-head .go-more {
+    justify-content: flex-start;
+  }
+  
+  .portfolio .sec-head .row .col-lg-6:last-child {
+    margin-top: 16px;
+  }
+  
+  /* Single project / blog pages */
+  .main-post .main-img img,
+  .main-post .iner-img img,
+  .single-project-page img,
+  .single-project-page .project-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .coming-soon-cta .ml-20 {
+    margin-left: 0 !important;
+  }
+  
+  .coming-soon-cta .butn {
+    min-height: 44px;
+  }
 }
 
 /* Small Mobile (< 576px) */
@@ -1012,6 +1361,89 @@ body {
   
   .section-padding {
     padding: 40px 0 !important;
+  }
+  
+  /* Small mobile: CTA buttons stack full width */
+  .cta-buttons .d-flex.butn-presv {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 12px !important;
+  }
+  
+  .cta-buttons .butn-presv .butn {
+    width: 100% !important;
+    min-height: 48px;
+  }
+  
+  .intro-profile .stauts .butn-presv .butn {
+    width: 100%;
+    min-height: 48px;
+  }
+  
+  .sec-box {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  
+  .project-card {
+    padding: 16px;
+  }
+  
+  .project-card .content h4 {
+    font-size: 1.1rem;
+  }
+  
+  .project-card .content p.fz-15 {
+    font-size: 14px;
+  }
+  
+  .outcome-item h5 {
+    font-size: 14px;
+  }
+  
+  .tech-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .price .item {
+    padding: 16px 12px;
+  }
+  
+  .price .item .type {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+  
+  .price .item .content .feat li {
+    font-size: 13px;
+  }
+  
+  .contact form button[type="submit"] {
+    min-height: 48px;
+  }
+  
+  .navbar-nav .nav-item a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+  
+  .coming-soon-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .coming-soon-cta .butn {
+    width: 100%;
+    margin-left: 0 !important;
+    min-height: 48px;
   }
 }
 

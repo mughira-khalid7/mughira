@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './pages/Home';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useParams } from 'react-router-dom';
 import HomeDark from './pages/dark/Home';
 import Blogs from './pages/dark/blogs';
 import Works from './pages/dark/works';
@@ -12,6 +12,12 @@ import LightWorks from './pages/light/works';
 import SingleBlog from './pages/dark/single-blog';
 import ScrollToTop from './components/Common/ScrollToTop';
 import SingleProject from './pages/dark/SingleProject';
+
+function RedirectWorksToProject() {
+  const { slug } = useParams();
+  return <Navigate to={`/project/${slug}`} replace />;
+}
+
 function App() {
   return (
     <Router>
@@ -22,13 +28,13 @@ function App() {
         <Route path="/dark" element={<HomeDark />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/works/:slug" element={<RedirectWorksToProject />} />
         <Route path="/blog-details/:id" element={<SingleBlog />} />
         <Route path="/light-m" element={<HomeLight />} />
         <Route path="/l-blogs" element={<LightBlogs />} />
         <Route path="/l-single-blog" element={<LightSingleBlog />} />
         <Route path="/l-single-project" element={<LightSingleProject />} />
         <Route path="/l-works" element={<LightWorks />} />
-        <Route path="/project/:slug" element={<SingleProject />} />
         <Route path="/project/:slug" element={<SingleProject />} />
       </Routes>
     </Router>
