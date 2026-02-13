@@ -12,6 +12,7 @@ import LightWorks from './pages/light/works';
 import SingleBlog from './pages/dark/single-blog';
 import ScrollToTop from './components/Common/ScrollToTop';
 import SingleProject from './pages/dark/SingleProject';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function RedirectWorksToProject() {
   const { slug } = useParams();
@@ -22,6 +23,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <SpeedInsights />
       <Routes>
         <Route path="/" element={<HomeDark />} />
         <Route path="/preview" element={<Home />} />
